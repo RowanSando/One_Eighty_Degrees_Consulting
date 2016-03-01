@@ -1,9 +1,10 @@
 == README
 
-<a href="https://codeclimate.com/repos/56d4217724456b7463002889/feed"><img src="https://codeclimate.com/repos/56d4217724456b7463002889/badges/2168ba884b3ef7e6f446/gpa.svg" /></a>
+CodeClimate
+https://codeclimate.com/repos/56d4217724456b7463002889/feed"
 
+Travis
+https://travis-ci.org/fununloaded/One_Eighty_Degrees_Consulting/settings
 
-<a href="https://travis-ci.org/fununloaded/One_Eighty_Degrees_Consulting/settings"><img src="https://travis-ci.org/fununloaded/One_Eighty_Degrees_Consulting.svg?branch=master" /></a>
-
-
-<a href="https://www.pivotaltracker.com/n/projects/1545635">PivotalTracker</a>
+Pivotal Tracker
+https://www.pivotaltracker.com/n/projects/1545635
