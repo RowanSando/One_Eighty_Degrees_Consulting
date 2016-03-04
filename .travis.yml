@@ -1,12 +1,4 @@
 language: ruby
-
-services:
-  - postgresql
 rvm:
-  - 2.3.0
-env:
-  - DB=postgresql
-script:
-  - RAILS_ENV=test bundle exec rake --trace db:migrate test
-before_script:
-  - psql -c 'create database myapp_test' -U postgres
+  - "2.3.0"
+install: ./install-dependencies.sh
