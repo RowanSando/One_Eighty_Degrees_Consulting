@@ -1,10 +1,25 @@
-== README
+README
 
-CodeClimate
-https://codeclimate.com/repos/56d4217724456b7463002889/feed"
+This README would normally document whatever steps are necessary to get the application up and running.
 
-Travis
-https://travis-ci.org/fununloaded/One_Eighty_Degrees_Consulting/settings
+Things you may want to cover:
 
-Pivotal Tracker
-https://www.pivotaltracker.com/n/projects/1545635
+Ruby version
+
+System dependencies
+
+Configuration
+
+Database creation
+
+Database initialization
+
+How to run the test suite
+
+Services (job queues, cache servers, search engines, etc.)
+
+Deployment instructions
+
+…
+
+Please feel free to use a different markup language if you do not plan to run rake doc:app.
