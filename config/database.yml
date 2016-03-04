@@ -18,9 +18,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
-  host:     <%= ENV['IP'] %>
   
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -46,7 +43,8 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  #port:   sudo service postgresql start 
+
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public

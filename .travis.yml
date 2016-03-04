@@ -1,7 +1,5 @@
 language: ruby
 
-before_script:
-  - psql -c "CREATE USER skateparks WITH PASSWORD 'skateparks';" -U postgres
 services:
   - postgresql
 rvm:
