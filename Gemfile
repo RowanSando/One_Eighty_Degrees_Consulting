@@ -68,3 +68,13 @@ group :test do
   gem 'factory_girl_rails' # if using FactoryGirl
   gem 'metric_fu'        # collect code metrics
 end
+
+
+# Front-end {
+gem 'bootstrap-sass'
+gem 'haml-rails'
+# }
+# Forms, mail {
+gem 'mail_form', '~> 1.5.1.rc'
+gem 'simple_form', '~> 3.2.1.rc'
+# }
