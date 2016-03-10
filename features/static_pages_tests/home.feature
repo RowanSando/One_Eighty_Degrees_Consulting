@@ -7,4 +7,4 @@ Feature: home page
   
 Scenario: seeing the home page successfully
   Given I am on the home page
-  Then I should see 180-Degrees at Berkeley
+  Then I should see "180 Degrees"

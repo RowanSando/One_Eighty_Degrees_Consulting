@@ -8,16 +8,20 @@ Feature: feature apply
   # Happy path:
   Scenario: going to application page successfully
     Given I am on the home page
-    And I follow the application for corporate sponsor page
-    And I fill in company name with "IBM"
-    And I fill in email with "ibm@ibm.com"
-    And I press submit
-    Then I should see "Application Receieved"
+    When I follow "Applications"
+    And I follow "Sponsors"
+    Then I should be on the application for sponsors page
+    
+  Scenario: successful application
+    Given I am on the application for sponsors page
+    When I fill in "Name" with "IBM"
+    And I fill in "Email" with "ibm@ibm.com"
+    And I press "Send message"
+    Then I should see "Thank you for your message. We'll get back to you soon."
 
   # Sad path:
   Scenario: failed application
-    Given I am on the home page
-    And I follow the application for corporate sponsor page
-    And I fill in company name with "IBM"
-    And I press submit
-    Then I should see "Email required!"
+    Given I am on the application for sponsors page
+    When I fill in "Name" with "IBM"
+    And I press "Send message"
+    Then I should see "can't be blank"

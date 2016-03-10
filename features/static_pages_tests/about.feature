@@ -10,11 +10,11 @@ Feature: about page
   # seeing the header
   Scenario: seeing the about page successfully
     Given I am on the home page
-    And I follow the about page
-    Then I should see About 180 Degrees at Berkeley
+    When I follow "About"
+    Then I should see "About - 180 Degrees"
   
   # checking the route
   Scenario: going to about page successfully
     Given I am on the home page
-    And I follow the about page
+    And I follow "About"
     Then I should be on the about page

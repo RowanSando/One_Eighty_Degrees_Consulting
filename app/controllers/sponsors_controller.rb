@@ -4,7 +4,7 @@ class SponsorsController < ApplicationController
   end
 
   def create
-    @sponsor = Sponsor.new(params[:client])
+    @sponsor = Sponsor.new(params[:sponsor])
     @sponsor.request = request
     if @sponsor.deliver
       flash.now[:error] = nil

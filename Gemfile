@@ -45,6 +45,7 @@ group :development, :test do
   gem 'byebug'
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
   gem 'sqlite3'
+  gem 'rspec-rails', '2.14'
 end
 
 group :development do
@@ -59,7 +60,7 @@ end
 
 # setup Cucumber, RSpec, autotest support
 group :test do
-  gem 'rspec-rails', '2.14'
+  gem 'rake', '< 11.0'
   gem 'simplecov', :require => false
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # basic imperative step defs
@@ -67,6 +68,7 @@ group :test do
   gem 'autotest-rails'
   gem 'factory_girl_rails' # if using FactoryGirl
   gem 'metric_fu'        # collect code metrics
+  gem 'test-unit'
 end
 
 

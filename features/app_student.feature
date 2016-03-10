@@ -8,18 +8,20 @@ Feature: feature apply
   # Happy path:
   Scenario: going to application page successfully
     Given I am on the home page
-    And I follow the application for students page
+    When I follow "Applications"
+    And I follow "Students"
     Then I should be on the application for students page
-    And I fill in name with "Rowan"
-    And I fill in email with "rowan@funbun.com"
-    And I press submit
-    Then I should see "Application Receieved"
+    
+  Scenario: successful application
+    Given I am on the application for students page
+    When I fill in "Name" with "Rowan"
+    And I fill in "Email" with "rowan@funbun.com"
+    And I press "Send message"
+    Then I should see "Thank you for your message. We'll get back to you soon."
 
   # Sad path:
   Scenario: failed application
-    Given I am on the home page
-    And I follow the application for students page
-    Then I should be on the application for students page
-    And I fill in name with "Rowan"
-    And I press submit
-    Then I should see "Email required!"
+    Given I am on the application for students page
+    When I fill in "Name" with "Rowan"
+    And I press "Send message"
+    Then I should see "can't be blank"

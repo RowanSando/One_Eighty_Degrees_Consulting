@@ -2,12 +2,16 @@ Rails.application.routes.draw do
   
   root 'main#index'
   
-  resources :applications
+  resources :applications, only: [:index]
   resources "students", only: [:new, :create]
   resources "clients", only: [:new, :create]
   resources "sponsors", only: [:new, :create]
-
   
+  # get 'about' => 'about#index', :as => 'about'
+  # get 'teams' => 'teams#index', :as => 'teams'
+  get '/about' => 'about#index'
+  get '/teams' => 'teams#index'
+  get '/home' => 'main#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,21 +3,25 @@ Feature: feature apply
   As a potential non-profit client
   I want to be able to apply 
   So that I can receive consulting
-
+    
   # checking the route
   # Happy path:
   Scenario: going to application page successfully
     Given I am on the home page
-    And I follow the application for non-profit orgs page
-    And I fill in name with "UNICEF"
-    And I fill in email with "unicef@unicef.com"
-    And I press submit
-    Then I should see "Application Receieved"
+    When I follow "Applications"
+    And I follow "Clients"
+    Then I should be on the application for clients page
+    
+  Scenario: successful application
+    Given I am on the application for clients page
+    When I fill in "Name" with "UNICEF"
+    And I fill in "Email" with "unicef@unicef.com"
+    And I press "Send message"
+    Then I should see "Thank you for your message. We'll get back to you soon."
 
   # Sad path:
   Scenario: failed application
-    Given I am on the home page
-    And I follow the application for non-profit orgs page
-    And I fill in name with "UNICEF"
-    And I press submit
-    Then I should see "Email required!"
+    Given I am on the application for clients page
+    When I fill in "Name" with "UNICEF"
+    And I press "Send message"
+    Then I should see "can't be blank"
