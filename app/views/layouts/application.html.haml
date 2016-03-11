@@ -6,6 +6,26 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %header
+      .nav
+        %ul
+          %li.home
+            %a{:href => "/"} Home
+          %li.about
+            %a{:href => "/about"} About
+          %li.teams
+            %a{:href => "/team"} Team
+          %li.applications
+            %a{:href => "/applications"} Apply
+          %li.login
+            %a{:href => "/login"} Login
+    %br
+    
+    - if flash[:notice]
+      #notice.message= flash[:notice]
+    - elsif flash[:warning]
+      #warning.message= flash[:warning]
+      
+    %br
+            
     = yield
-
-// Need to put the nav bar on every page here. - Charles

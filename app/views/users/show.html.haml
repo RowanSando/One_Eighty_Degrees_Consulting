@@ -1,0 +1,12 @@
+.container
+  %h1 Login
+  %br
+  = form_tag :method => :post do
+    = label :user, :email, 'Email'
+    = text_field :user, 'email', required: true
+    %br
+    = label :user, :password, 'Password'
+    = password_field :user, 'password', required: true
+    %br
+    .form-actions
+      = submit_tag 'Submit'

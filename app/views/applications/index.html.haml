@@ -1,17 +1,12 @@
-%center
-  %h1 180 Degrees
-/ Temporary Navigation Bar
-%body.news
-  %header
-    .nav
-      %ul
-        / <li class="home"><a class="active" href="#">Home</a></li>
-        %li.home
-          %a{:href => "home"} Home
-        %li.students
-          %a{:href => "students/new"} Students
-        %li.clients
-          %a{:href => "clients/new"} Clients
-        %li.sponsors
-          %a{:href => "sponsors/new"} Sponsors
+%ul
+  / <li class="home"><a class="active" href="#">Home</a></li>
+  %li.students
+    %h1
+      %a{:href => "students/new"} Students
+  %li.clients
+    %h1
+      %a{:href => "clients/new"} Clients
+  %li.sponsors
+    %h1
+      %a{:href => "sponsors/new"} Sponsors
 %br

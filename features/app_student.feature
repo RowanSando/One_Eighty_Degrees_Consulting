@@ -8,7 +8,7 @@ Feature: feature apply
   # Happy path:
   Scenario: going to application page successfully
     Given I am on the home page
-    When I follow "Applications"
+    When I follow "Apply"
     And I follow "Students"
     Then I should be on the application for students page
     

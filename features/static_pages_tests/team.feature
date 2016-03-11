@@ -10,11 +10,11 @@ Feature: team page
   # seeing the header
   Scenario: seeing the team page successfully
     Given I am on the home page
-    And I follow "Teams"
-    Then I should see "Teams - 180 Degrees"
+    And I follow "Team"
+    Then I should see "Team - 180 Degrees"
   
   # checking the route
   Scenario: going to team page successfully
     Given I am on the home page
-    And I follow "Teams"
-    Then I should be on the teams page
+    And I follow "Team"
+    Then I should be on the team page
