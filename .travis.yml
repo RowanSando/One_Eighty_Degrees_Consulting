@@ -4,3 +4,5 @@ rvm:
 install: ./install-dependencies.sh
 before_script:
   - "rake db:migrate RAILS_ENV=test"
+after_success:
+  - coveralls
