@@ -62,7 +62,6 @@ end
 group :test do
   gem 'rake', '< 11.0'
   gem 'simplecov', :require => false
-  gem 'coveralls', :require => false
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # basic imperative step defs
   gem 'database_cleaner' # required by Cucumber
