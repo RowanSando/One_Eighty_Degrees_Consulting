@@ -1,8 +1,7 @@
 # at TOP of spec/spec_helper.rb:
 require 'simplecov'
 require 'coveralls'
-# Coveralls.wear!('rails')
-
+Coveralls.wear!('rails')
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
