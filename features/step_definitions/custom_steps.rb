@@ -6,10 +6,15 @@ Given /the following users exist/ do |users_table|
   end
 end
 
-# Given /^(?:|I )am( not)? logged in$/ do |status|
-#   if status
-#     session[:id].should == ""
-#   else
-#     session[:id].should_not == ""
-#   end
+Given /^(?:|I )am( not)? logged in(.*)/ do |status, access|
+  pending
+  # if status
+  #   session[:id].should == ""
+  # else
+  #   session[:id].should_not == ""
+  # end
+end
+
+# Given /^(?:|I )am logged into the admin panel/ do
+#   pending
 # end

@@ -7,13 +7,13 @@ describe UsersController do
         end
         context 'email exists' do
             it 'should ask the model to find a user with the entered email' do
-                User.should_receive(:find_by).with(:email => 'rowan@funbun.com')
-                post :login, {:user => {:email => 'rowan@funbun.com', :password => 'abc123'}}
+                User.should_receive(:find_by).with(:email => 'rowan@berkeley.edu')
+                post :login, {:user => {:email => 'rowan@berkeley.edu', :password => 'abc123'}}
             end
             context 'passwords match' do
                 before :each do
-                    User.stub(:find_by).with(:email => 'rowan@funbun.com').and_return(@test_user)
-                    post :login, {:user => {:email => 'rowan@funbun.com', :password => 'abc123'}}
+                    User.stub(:find_by).with(:email => 'rowan@berkeley.edu').and_return(@test_user)
+                    post :login, {:user => {:email => 'rowan@berkeley.edu', :password => 'abc123'}}
                 end
                 it 'should set the logged-in user in the session' do
                     session[:user].should == @test_user.id
@@ -27,8 +27,8 @@ describe UsersController do
             end
             context 'passwords do not match' do 
                 before :each do
-                    User.stub(:find_by).with(:email => 'rowan@funbun.com').and_return(@test_user)
-                    post :login, {:user => {:email => 'rowan@funbun.com', :password => 'wrong_password'}}
+                    User.stub(:find_by).with(:email => 'rowan@berkeley.edu').and_return(@test_user)
+                    post :login, {:user => {:email => 'rowan@berkeley.edu', :password => 'wrong_password'}}
                 end
                 it 'should notify the user the password is incorrect' do
                     flash[:warning].should == 'Incorrect password.'
