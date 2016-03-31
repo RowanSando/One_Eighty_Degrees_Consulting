@@ -1,55 +1,31 @@
 .container
   %form
   %center
-    %h1 180 Degrees Consulting Berkeley — Spring 2016 Application
-    Info Session #1 - Monday Feb. 1st
-    %br
-    Barrows 170
-    %br
-      7pm - 9pm
-      %p
-        Info Session #2 - Tuesday Feb. 2nd
-        %br
-          Barrows 126
-          %br 7pm - 9pm
-      %p
-        Case Workshop - Thursday Feb. 4th
-        %br
-          Barrows 20
-          %br 7pm - 9pm
-      %p
-        ***Application Deadline****
-        %br Friday Feb 5th - 11:59pm
-      %p Interviews - Sunday Feb 7th - Wednesday Feb 10th
-      %p
-        Consultant Welcome Night (if selected) - Thursday Feb. 11
-        %br 7pm
-      %p
-        Email
-        %a{:href => "mailto:recruitment.ucb@180dc.org"} recruitment.ucb@180dc.org
-        regarding questions.
+    %h1 180 Degrees Consulting Berkeley
     %p
     %p
     %p
     %p
-    %p
-    = form_tag :method => :post do
-      %h2 Candidate Info
+    = form_tag('/clients#create', :method => :post) do
+      %h2 Client Info
       %br
       %h3 Your Name
-      = label :student, :name
-      = text_field :user, 'Name', required: true
+      = label :client, :name
+      = text_field :client, 'name', required: true
       %br
       %h3 Your Email
-      = label :student, :email
-      = text_field :user, 'Email', required: true
+      = label :client, :email
+      = text_field :client, 'email', required: true
       %br
-      %h3 Your Major
-      = label :student, :major
-      = text_field :user, 'Major', required: true
+      %h3 Comments?
+      = label :client, :info
+      = text_field :client, 'info', required: true
       %br
-      %h3 When do you graduate?
-      = label :sudent, :graduation
-      = text_field :user, 'Graduation Date', required: true
+      %br
+      %br
       .form-actions
         = submit_tag 'Submit'
+      %br
+      %br
+      %br
+      %br

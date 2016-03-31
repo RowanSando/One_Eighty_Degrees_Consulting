@@ -1,17 +1,17 @@
 class SponsorsController < ApplicationController
+  
+  def user_params
+    params.require(:sponsor).permit(:name, :email, :info)
+  end
+  
   def new
     @sponsor = Sponsor.new
   end
+  
 
   def create
-    @sponsor = Sponsor.new(params[:sponsor])
-    @sponsor.request = request
-    if @sponsor.deliver
-      flash.now[:error] = nil
-      flash.now[:notice] = 'Thank you for your message!'
-    else
-      flash.now[:error] = 'Cannot send message.'
-      render :new
-    end
+    @sponsor = Sponsor.new(user_params)
+    @sponsor.save
   end
+  
 end
