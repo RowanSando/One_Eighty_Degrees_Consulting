@@ -1,18 +1,66 @@
 .container
-  %h1 Apply Here
-  %br
-  = simple_form_for @student, :html => {:class => 'form-horizontal' } do |f|
-    = f.input :name, :required => true
+  %form
+  %center
+    %h1 180 Degrees Consulting Berkeley — Spring 2016 Application
+    Info Session #1 - Monday Feb. 1st
     %br
-    = f.input :email, :required => true
+    Barrows 170
     %br
-    = f.input :message, :as => :text, :required => false, :input_html => {:rows => 10}
-    %br
-    %strong Attatch Resume
-    = f.input :file, as: :file
-    %br
-
-    .hidden
-      = f.input :nickname, :hint => 'Leave this field blank!'
-    .form-actions
-      = f.button :submit, 'Send message', :class=> "btn btn-primary"
+      7pm - 9pm
+      %p
+        Info Session #2 - Tuesday Feb. 2nd
+        %br
+          Barrows 126
+          %br 7pm - 9pm
+      %p
+        Case Workshop - Thursday Feb. 4th
+        %br
+          Barrows 20
+          %br 7pm - 9pm
+      %p
+        ***Application Deadline****
+        %br Friday Feb 5th - 11:59pm
+      %p Interviews - Sunday Feb 7th - Wednesday Feb 10th
+      %p
+        Consultant Welcome Night (if selected) - Thursday Feb. 11
+        %br 7pm
+      %p
+        Email
+        %a{:href => "mailto:recruitment.ucb@180dc.org"} recruitment.ucb@180dc.org
+        regarding questions.
+    %p
+    %p
+    %p
+    %p
+    %p
+    = form_tag('/students#create', :method => :post) do
+      %h2 Candidate Info
+      %br
+      %h3 Your Name
+      = label :student, :name
+      = text_field :student, 'name', required: true
+      %br
+      %h3 Your Email
+      = label :student, :email
+      = text_field :student, 'email', required: true
+      %br
+      %h3 What is your Major?
+      = label :student, :major
+      = text_field :student, 'major', required: true
+      %br
+      %h3 When do you graduate?
+      = label :student, :graduation
+      = text_field :student, 'graduation', required: true
+      %br
+      %h3 How did you hear about this club?
+      = label :student, :info
+      = text_field :student, 'info', required: true
+      %br
+      %br
+      %br
+      .form-actions
+        = submit_tag 'Submit'
+      %br
+      %br
+      %br
+      %br
