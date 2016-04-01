@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   root 'main#index'
   devise_for :users
-  devise_scope :user do  
+  devise_scope :users do  
     get '/users/sign_out' => 'devise/sessions#destroy'     
   end
   resources :applications, only: [:index]
   resources "students", only: [:new, :create]
   resources "clients", only: [:new, :create]
   resources "sponsors", only: [:new, :create]
-  # resources "users", except: :show
+  resources "users"
   # resources :cars, :except => [:new, :index, :delete]
   
   # get 'about' => 'about#index', :as => 'about'
