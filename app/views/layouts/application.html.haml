@@ -4,6 +4,7 @@
     %title One Eighty Degrees Consulting
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'defaults'
     = csrf_meta_tags
   %body
     %header
@@ -17,8 +18,15 @@
             %a{:href => "/team"} Team
           %li.applications
             %a{:href => "/applications"} Apply
-          %li.login
-            %a{:href => "/login"} Login
+          - if user_signed_in?
+            %li.logout
+              = link_to 'Logout', destroy_user_session_path, :method => 'delete'
+            = current_user.email
+          - else
+            %li.signup
+              = link_to 'Sign up', new_user_registration_path
+            %li.login  
+              = link_to 'Login', new_user_session_path
     %br
     
     - if flash[:notice]

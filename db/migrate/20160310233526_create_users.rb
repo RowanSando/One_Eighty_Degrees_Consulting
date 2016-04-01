@@ -4,12 +4,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string 'email'
       t.string 'name'
       t.string 'password'
-      t.string 'type'
+      t.string 'member_type'
       t.timestamps
     end
   end
   
   def down
-    drop_table 'users'
+    # drop_table 'users'
   end
 end
