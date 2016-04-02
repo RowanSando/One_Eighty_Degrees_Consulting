@@ -12,7 +12,7 @@ Feature: signup
     # When I fill in "name" with "Bob Lee"
     And I fill in "Email" with "blee@berkeley.edu"
     And I fill in "Password" with "password123"
-    And I fill in "Password confirmation" with "password123"
+    And I fill in "Confirm password" with "password123"
     And I press "Sign up"
     Then I should see "Welcome! You have signed up successfully."
 
@@ -22,7 +22,7 @@ Feature: signup
     # When I fill in "name" with "Bob Lee"
     And I fill in "Email" with "blee@berkeley.edu"
     And I fill in "Password" with "12344"
-    And I fill in "Password confirmation" with "crapiforgot"
+    And I fill in "Confirm password" with "crapiforgot"
     And I press "Sign up"
     Then I should see "doesn't match Password"
     
@@ -40,6 +40,6 @@ Feature: signup
     # When I fill in "name" with "Bob Lee"
     And I fill in "Email" with "blee"
     And I fill in "Password" with "12344"
-    And I fill in "Password confirmation" with "12344"
+    And I fill in "Confirm password" with "12344"
     And I press "Sign up"
     Then I should see "is invalid"
