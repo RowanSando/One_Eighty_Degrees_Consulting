@@ -18,7 +18,8 @@
             %a{:href => "/team"} Team
           %li.applications
             %a{:href => "/applications"} Apply
-          - if user_signed_in? && current_user.member_type && current_user.member_type == 'admin'
+          // - if user_signed_in? && current_user.member_type == 'admin'
+          - if user_signed_in?
             %li.admin
               %a{:href => "/admin"} Admin
           - if user_signed_in?
