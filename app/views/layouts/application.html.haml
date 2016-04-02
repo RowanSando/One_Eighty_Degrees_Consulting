@@ -18,9 +18,9 @@
             %a{:href => "/team"} Team
           %li.applications
             %a{:href => "/applications"} Apply
-          - if user_signed_in? && current_user.member_type == 'admin'
-            %li.admins
-              %a{:href => "/admin"} Admin
+          // - if user_signed_in? && current_user.member_type == 'admin'
+          //   %li.admins
+          //     %a{:href => "/admin"} Admin
           - if user_signed_in?
             %li.logout
               = link_to 'Logout', destroy_user_session_path, :method => 'delete'

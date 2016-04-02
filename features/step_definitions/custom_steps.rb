@@ -6,10 +6,6 @@ Given /the following users exist/ do |users_table|
   end
 end
 
-Then /^I should see the link "([^\"]*)"$/ do |linked_text|
-  page.should have_css("a", :text => linked_text)
-end
-
 Given /^(?:|I )am( not)? logged in(.*)?/ do |status, access|
   pending
   # if status
