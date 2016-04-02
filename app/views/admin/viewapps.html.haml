@@ -4,11 +4,17 @@
     %tr
       %th Name
       %th Email
+      %th Major
+      %th Graduation Year
+      %th Info
   %tbody
     - Student.all.each do |student|
       %tr
         %td= student.name 
         %td= student.email
+        %td= student.major
+        %td= student.graduation
+        %td= student.info
 
 %h1 Clients
 %table#applications
@@ -16,11 +22,14 @@
     %tr
       %th Name
       %th Email
+      %th Comments
+      
   %tbody
     - Client.all.each do |client|
       %tr
         %td= client.name 
         %td= client.email
+        %td= client.info
 
 %h1 Sponsors
 %table#applications
@@ -28,8 +37,10 @@
     %tr
       %th Name
       %th Email
+      %th Comments
   %tbody
     - Sponsor.all.each do |sponsor|
       %tr
         %td= sponsor.name 
         %td= sponsor.email
+        %td= sponsor.info

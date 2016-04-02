@@ -18,5 +18,5 @@ Feature: feature apply
     And I fill in "Email" with "unicef@unicef.com"
     And I fill in "Info" with "cs169"
     And I press "Submit"
-    Then I should see "Thank you for your message. We'll get back to you soon."
+    Then I should see "Thank you for your interest. We'll get back to you soon."
 

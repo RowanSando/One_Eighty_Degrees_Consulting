@@ -140,7 +140,7 @@
         null,
         null,
         null,
-        null,
+        1,
         null,
         null,
         null,
@@ -778,7 +778,7 @@
       ],
       "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/admin_controller.rb": [
         1,
-        1,
+        null,
         null,
         1,
         null,
@@ -799,10 +799,11 @@
         1,
         null,
         null,
-        1,
         null,
         1,
-        0,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -963,109 +964,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/spec/controllers/users_controller_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        9,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        3,
-        3,
-        null,
-        1,
-        0,
-        null,
-        1,
-        0,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        2,
-        2,
-        null,
-        1,
-        0,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        0,
-        0,
-        null,
-        1,
-        3,
-        3,
-        null,
-        1,
-        0,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/users_controller.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/spec/helpers/admin_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/client.rb": [
         1,
         null
       ],
@@ -1076,13 +975,9 @@
       "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/student.rb": [
         1,
         null
-      ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/client.rb": [
-        1,
-        null
       ]
     },
-    "timestamp": 1459558426
+    "timestamp": 1459566650
   },
   "Cucumber Features": {
     "coverage": {
@@ -1829,6 +1724,18 @@
         null,
         null
       ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/student.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/client.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/sponsor.rb": [
+        1,
+        null
+      ],
       "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/main_controller.rb": [
         1,
         null
@@ -1897,19 +1804,81 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/student.rb": [
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/applications_controller.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/client.rb": [
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/sponsors_controller.rb": [
         1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/sponsor.rb": [
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/clients_controller.rb": [
         1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/students_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/static_pages_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1459563852
+    "timestamp": 1459566310
   }
 }

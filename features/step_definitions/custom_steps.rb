@@ -1,8 +1,28 @@
+# Create Users Table for testing
 Given /the following users exist/ do |users_table|
   users_table.hashes.each do |user|
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
     User.create(user)
+  end
+end
+
+# Create Students Table for testing
+Given /the following students exist/ do |students_table|
+  students_table.hashes.each do |student|
+    Student.create(student)
+  end
+end
+
+# Create Clients Table for testing
+Given /the following clients exist/ do |clients_table|
+  clients_table.hashes.each do |client|
+    Client.create(client)
+  end
+end
+
+# Create Sponsors Table for testing
+Given /the following sponsors exist/ do |users_table|
+  users_table.hashes.each do |sponsor|
+    Sponsor.create(sponsor)
   end
 end
 
