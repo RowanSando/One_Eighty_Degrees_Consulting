@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SponsorsController do
     describe 'new' do
-        it 'should create a new sponsor object' do
+        it 'should make a new Sponsor object' do
             expect(Sponsor).to receive(:new)
             get :new
         end
@@ -14,27 +14,18 @@ describe SponsorsController do
     describe 'create' do
         before :each do
             @sponsor = FactoryGirl.build(:sponsor)
+            @param = {name: 'IBM', email: 'ibm@ibm.com', info: 'cs169'}
         end
-        it 'should create a new Sponsor object' do
+        it 'should make a new Sponsor object' do
             expect(Sponsor).to receive(:new).and_return(@sponsor)
-            post :create
+            post :create, {sponsor: @param}
         end
-        before :each do
-            allow(Sponsor).to receive(:new).and_return(@sponsor)
+        it 'should save it to the database' do
+            expect{post :create, {sponsor: @param}}.to change{Sponsor.count}.by(1)
         end
-        context 'mail is succcesfully delivered' do
-            it 'should select the create template for rendering' do
-                allow(@sponsor).to receive(:deliver).and_return(true)
-                post :create
-                expect(response).to render_template('create')
-            end
-        end
-        context 'mail is not delivered' do
-            it 'should select the new template for rendering' do
-                allow(@sponsor).to receive(:deliver).and_return(false)
-                post :create
-                expect(response).to render_template('new')
-            end
+        it 'should select the create template for rendering' do
+            post :create, {sponsor: @param}
+            expect(response).to render_template('create')
         end
     end
 end

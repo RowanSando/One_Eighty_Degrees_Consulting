@@ -11,11 +11,15 @@ Rails.application.routes.draw do
   resources "users"
   # resources :cars, :except => [:new, :index, :delete]
   
-  # get 'about' => 'about#index', :as => 'about'
-  # get 'teams' => 'teams#index', :as => 'teams'
   get '/about' => 'static_pages#about'
   get '/team' => 'static_pages#team'
   get '/home' => 'static_pages#home'
+  get '/admin' => 'admin#index'
+  get '/admin/viewapps' => 'admin#viewapps'
+  
+  # admin test
+  # get '/admin/' => 'admin#admin_page'
+  
   # get '/login' => 'users#show'
   # post '/login' => 'users#login'
 

@@ -10,27 +10,27 @@ Feature: login page
   Background:
     # Given I am not logged in
     Given the following users exist:
-    | email                   | password    | access    |
-    | rowan@berkeley.edu      | abc123      | admin     |
-    | rowan2@berkeley.edu     | abc1234     | applicant |
+    | email                       | password    | member_type |
+    | admin@berkeley.edu          | password123 | admin       |
+    | member@berkeley.edu         | password123 | member      |
 
   # going to the login page
   # Happy path:
   Scenario: logging in successfully
     Given I am on the home page
     And I follow "Login"
-    Then I should be on the login page
-    And I fill in "Email" with "rowan@berkeley.edu"
-    And I fill in "Password" with "abc123"
-    And I press "Submit"
-    Then I should see "Login successful."
-    And I should be on the admin page
+    Then I should be on the new_user_session page
+    And I fill in "Email" with "admin@berkeley.edu"
+    And I fill in "Password" with "password123"
+    And I press "Log in"
+    Then I should see "Signed in successfully."
+    And I should see the link "Admin"
   
   # Sad path:
   Scenario: failed application
     Given I am on the home page
     And I follow "Login"
-    Then I should be on the login page
+    Then I should be on the new_user_session page
     And I fill in "Email" with "rowan@funion.com"
-    And I press "Submit"
-    Then I should see "Invalid email"
+    And I press "Log in"
+    Then I should see "Invalid email or password."

@@ -323,6 +323,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
+    table_print (1.5.6)
     term-ansicolor (1.3.2)
       tins (~> 1.0)
     test-unit (3.1.5)
@@ -389,6 +390,7 @@ DEPENDENCIES
   simplecov
   spring
   sqlite3
+  table_print
   test-unit
   turbolinks
   uglifier (>= 1.3.0)

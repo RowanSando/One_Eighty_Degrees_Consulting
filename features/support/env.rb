@@ -1,5 +1,7 @@
 require 'simplecov'
 require 'coveralls'
+# require 'spec/factories'
+# require 'factory_girl/step_definitions'
 # Coveralls.wear!('rails')
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[

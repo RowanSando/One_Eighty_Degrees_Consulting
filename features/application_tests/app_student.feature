@@ -17,7 +17,7 @@ Feature: feature apply
     When I fill in "Name" with "Rowan"
     And I fill in "Email" with "rowan@funbun.com"
     And I fill in "Major" with "EECS"
-    And I fill in "Graduation" with "Spring2016"
+    And I fill in "Graduation" with "2016"
     And I press "Submit"
     Then I should see "Thank you for your message. We'll get back to you soon."
 
@@ -26,4 +26,4 @@ Feature: feature apply
     Given I am on the application for students page
     When I fill in "Name" with "Rowan"
     And I press "Submit"
-    Then I should see "can't be blank"
+    Then I should see "please fill out the field"

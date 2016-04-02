@@ -5,46 +5,41 @@ Feature: signup
   As a potential applicant
   I want to be able to signup,
   So I can apply to 180-Degrees
-
-  Scenario: going to signup
-    Given I am on the home page
-    When I follow "Login"
-    Then I should see "Signup"
   
   # happy path
   Scenario: successfully signup
-    Given I am on the login page
-    When I fill in "name" with "Bob Lee"
-    And I fill in "email" with "blee@berkeley.edu"
-    And I fill in "password" with "12344"
-    And I fill in "confirm password" with "12344"
-    And I press "Signup"
-    Then I should see "Sign up successful"
+    Given I am on the new_user_registration page
+    # When I fill in "name" with "Bob Lee"
+    And I fill in "Email" with "blee@berkeley.edu"
+    And I fill in "Password" with "password123"
+    And I fill in "Password confirmation" with "password123"
+    And I press "Sign up"
+    Then I should see "Welcome! You have signed up successfully."
 
   # sad paths
   Scenario: password not match
-    Given I am on the login page
-    When I fill in "name" with "Bob Lee"
-    And I fill in "email" with "blee@berkeley.edu"
-    And I fill in "password" with "12344"
-    And I fill in "confirm password" with "crapiforgot"
-    And I press "Signup"
-    Then I should see "Error, password does not match!"
+    Given I am on the new_user_registration page
+    # When I fill in "name" with "Bob Lee"
+    And I fill in "Email" with "blee@berkeley.edu"
+    And I fill in "Password" with "12344"
+    And I fill in "Password confirmation" with "crapiforgot"
+    And I press "Sign up"
+    Then I should see "doesn't match Password"
     
-  Scenario: missing info
-    Given I am on the login page
-    When I fill in "name" with "Bob Lee"
+  Scenario: password too short
+    Given I am on the new_user_registration page
+    # When I fill in "name" with "Bob Lee"
     # missing email
-    And I fill in "password" with "12344"
-    And I fill in "confirm password" with "12344"
-    And I press "Signup"
-    Then I should see "Missing information!"
+    And I fill in "Email" with "blee@berkeley.edu"
+    And I fill in "Password" with "12344"
+    And I press "Sign up"
+    Then I should see "too short (minimum is 8 characters)"
     
   Scenario: not a valid e-mail address
-    Given I am on the login page
-    When I fill in "name" with "Bob Lee"
-    And I fill in "email" with "blee@cars.com"
-    And I fill in "password" with "12344"
-    And I fill in "confirm password" with "12344"
-    And I press "Signup"
-    Then I should see "Must use a Berkeley e-mail."
+    Given I am on the new_user_registration page
+    # When I fill in "name" with "Bob Lee"
+    And I fill in "Email" with "blee"
+    And I fill in "Password" with "12344"
+    And I fill in "Password confirmation" with "12344"
+    And I press "Sign up"
+    Then I should see "is invalid"

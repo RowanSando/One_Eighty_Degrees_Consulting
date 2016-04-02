@@ -18,10 +18,13 @@
             %a{:href => "/team"} Team
           %li.applications
             %a{:href => "/applications"} Apply
+          - if user_signed_in? && current_user.member_type == 'admin'
+            %li.admins
+              %a{:href => "/admin"} Admin
           - if user_signed_in?
             %li.logout
               = link_to 'Logout', destroy_user_session_path, :method => 'delete'
-            = current_user.email
+            = 'signed in as ' + current_user.email
           - else
             %li.signup
               = link_to 'Sign up', new_user_registration_path
@@ -33,6 +36,8 @@
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
+    -elsif flash[:alert] 
+      #warning.message= flash[:alert]
       
     %br
             

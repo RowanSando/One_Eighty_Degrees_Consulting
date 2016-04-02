@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   
-  def user_params
+  def client_params
     params.require(:client).permit(:name, :email, :info)
   end
   
@@ -10,7 +10,7 @@ class ClientsController < ApplicationController
   
 
   def create
-    @client = Client.new(user_params)
+    @client = Client.new(client_params)
     @client.save
   end
   

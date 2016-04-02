@@ -1,0 +1,35 @@
+%h1 Students
+%table#applications
+  %thead
+    %tr
+      %th Name
+      %th Email
+  %tbody
+    - Student.all.each do |student|
+      %tr
+        %td= student.name 
+        %td= student.email
+
+%h1 Clients
+%table#applications
+  %thead
+    %tr
+      %th Name
+      %th Email
+  %tbody
+    - Client.all.each do |client|
+      %tr
+        %td= client.name 
+        %td= client.email
+
+%h1 Sponsors
+%table#applications
+  %thead
+    %tr
+      %th Name
+      %th Email
+  %tbody
+    - Sponsor.all.each do |sponsor|
+      %tr
+        %td= sponsor.name 
+        %td= sponsor.email

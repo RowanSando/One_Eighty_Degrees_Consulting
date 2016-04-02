@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   
-  def user_params
+  def student_params
     params.require(:student).permit(:name, :email, :major, :graduation, :info)
   end
   
@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
   
 
   def create
-    @student = Student.new(user_params)
+    @student = Student.new(student_params)
     @student.save
   end
   

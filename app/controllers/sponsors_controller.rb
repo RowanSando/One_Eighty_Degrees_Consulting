@@ -1,6 +1,6 @@
 class SponsorsController < ApplicationController
   
-  def user_params
+  def sponsor_params
     params.require(:sponsor).permit(:name, :email, :info)
   end
   
@@ -10,7 +10,7 @@ class SponsorsController < ApplicationController
   
 
   def create
-    @sponsor = Sponsor.new(user_params)
+    @sponsor = Sponsor.new(sponsor_params)
     @sponsor.save
   end
   

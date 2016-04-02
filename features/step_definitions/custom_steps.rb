@@ -6,12 +6,22 @@ Given /the following users exist/ do |users_table|
   end
 end
 
-Given /^(?:|I )am( not)? logged in(.*)/ do |status, access|
+Then /^I should see the link "([^\"]*)"$/ do |linked_text|
+  page.should have_css("a", :text => linked_text)
+end
+
+Given /^(?:|I )am( not)? logged in(.*)?/ do |status, access|
   pending
   # if status
-  #   session[:id].should == ""
+  #   step "I should not see 'signed in as'"
   # else
-  #   session[:id].should_not == ""
+  #   @user = Factory(:user, :email => 'rowan@funbun.com', :password => 'password123')
+  #   # @admin = Factory(:user, :email => 'admin@funbun.com', :password => 'password123', :member_type => 'admin')
+  #   visit('/users/sign_in')
+  #   fill_in('Email', :with => @user.email)
+  #   fill_in('Password', :with => @user.password)
+  #   click_button('Log in')
+  #   step "I should see 'signed in as'"
   # end
 end
 
