@@ -20,9 +20,3 @@ Feature: feature apply
     And I press "Submit"
     Then I should see "Thank you for your message. We'll get back to you soon."
 
-  # Sad path:
-  Scenario: failed application
-    Given I am on the application for clients page
-    When I fill in "Name" with "UNICEF"
-    And I press "Submit"
-    Then I should see "please fill out the field"

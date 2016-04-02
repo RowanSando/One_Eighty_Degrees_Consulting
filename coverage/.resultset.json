@@ -1877,8 +1877,39 @@
       "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/users_helper.rb": [
         1,
         null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/admin_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/student.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/client.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/sponsor.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1459563541
+    "timestamp": 1459563852
   }
 }

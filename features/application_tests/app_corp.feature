@@ -19,10 +19,3 @@ Feature: feature apply
     And I fill in "Info" with "cs169"
     And I press "Submit"
     Then I should see "Thank you for your message. We'll get back to you soon."
-
-  # Sad path:
-  Scenario: failed application
-    Given I am on the application for sponsors page
-    When I fill in "Name" with "IBM"
-    And I press "Submit"
-    Then I should see "please fill out the field"
