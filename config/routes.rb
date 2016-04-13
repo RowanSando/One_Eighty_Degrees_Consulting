@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'main#index'
   devise_for :users
   devise_scope :user do  
-    get '/users/sign_out' => 'devise/sessions#destroy'     
+    get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/admin/editusers/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   end
   resources :applications, only: [:index]
   resources "students", only: [:new, :create]
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get '/home' => 'static_pages#home'
   get '/admin' => 'admin#index'
   get '/admin/viewapps' => 'admin#viewapps'
+  get '/admin/editusers' => 'admin#editusers'
   
   # admin test
   # get '/admin/' => 'admin#admin_page'

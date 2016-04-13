@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-	# before_filter :ensure_admin!
+	before_filter :ensure_admin!
 	
 	def index
 	end
@@ -9,7 +9,7 @@ class AdminController < ApplicationController
 	
 	private
 		def ensure_admin!
-			unless current_user.member_type == 'admin'
+			unless user_signed_in? && current_user.member_type == 'admin'
 				sign_out current_user
 				redirect_to root_path
 			end

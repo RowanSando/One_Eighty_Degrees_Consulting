@@ -8,3 +8,8 @@ A Rails Project
 [![Issue Count](https://codeclimate.com/github/fununloaded/One_Eighty_Degrees_Consulting/badges/issue_count.svg)]( https://codeclimate.com/github/fununloaded/One_Eighty_Degrees_Consulting)
 
 <!--[![Test Coverage](https://codeclimate.com/github/JacksonGL/Rails/badges/coverage.svg)](https://codeclimate.com/github/JacksonGL/Rails/coverage)-->
+
+heroku: http://one-eighty-degrees-consulting.herokuapp.com
+login (admin): admin1@berkeley.edu
+      (user):  user@berkeley.edu
+password (for both): password123

@@ -14,73 +14,183 @@
  *= require_self
  */
 
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 body {
   margin: 0;
   padding: 0;
-  background: #ccc;
+  background: white;
+  font-family: "Josefin Sans";
+  text-align: center;
 }
- 
+
+// Nav Bar CSS: 
 .nav ul {
   list-style: none;
-  background-color: #444;
-  text-align: center;
-  padding: 0;
-  margin: 0;
+  background-color: rgba(255,255,255,.8);
+  // text-align: center;
+
+  padding-top: 1%;
+  padding-right: 3%;
+  padding-bottom: 0%;
+  padding-left: 0px;
+  
+  margin-top: 0;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0;
+  
+  // overflow: visible;
+  
 }
 .nav li {
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.5em;
+  font-family: "Josefin Sans";
+  font-size: 0em;
   line-height: 40px;
   height: 40px;
-  border-bottom: 1px solid #888;
+  
+  text-align: right;
 }
  
 .nav a {
   text-decoration: none;
   color: #fff;
   display: block;
-  transition: .3s background-color;
+  transition: 1.25s background-color;
 }
  
 .nav a:hover {
-  background-color: #28f22c;
+  color: gray;
 }
  
 .nav a.active {
-  background-color: #fff;
-  color: #444;
-  cursor: default;
+  background-color: rgba(255,255,255,.8);
+  color: #408000;
 }
- 
+
 @media screen and (min-width: 600px) {
   .nav li {
-    width: 120px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3.5px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2em;
+    
+    width: 125px;
     border-bottom: none;
     height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
+    text-align: center;
+    
+  }
+  
+  .nav li a {
+    color: #000;
   }
  
-  /* Option 1 - Display Inline */
   .nav li {
     display: inline-block;
     margin-right: -4px;
   }
+  
+  
+  .nav img {
+    width: 100%;
+    text-align: left;
+    max-height: 60%;
+    max-width: 60%;
+    margin-top: -44px;
+  }
+ 
   .hidden { display: none; }
 
 
- 
-  /* Options 2 - Float
-  .nav li {
-    float: left;
-  }
-  .nav ul {
-    overflow: auto;
-    width: 600px;
-    margin: 0 auto;
-  }
-  .nav {
-    background-color: #444;
-  }
-  */
+}
+
+// General CSS:
+
+// gray box title on each page
+h1 {
+    text-align: center;
+    background-color: gray;
+    height: 90px;
+    padding-top: 40px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2.7em;
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-weight: 350;
+    font-style: normal;
+    font-family: 'Lato', sans-serif;
+    margin-top: 55px;
+}
+
+// Login and Signup CSS:
+.loginfield {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  letter-spacing: 2px;
+}
+
+.confirmpassword {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.signup {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+h4 {
+  text-align: center;
+}
+
+h5 {
+  
+}
+
+// Admin Table CSS
+table {
+  text-align: center;
+  border-collapse: collapse;
+  width: 85%;
+}
+
+tr {
+  text-align: center;
+}
+
+// table categories
+th {
+  padding-right: 0px;
+  border: 1px solid black;
+  font-size: 16px;
+  text-transform: uppercase;
+  height: 32px;
+}
+
+// table items
+td {
+  text-align: center;
+  position: center;
+  border: 1px solid black;
+  height: 22px;
 }

@@ -1,12 +1,13 @@
-%ul
-  / <li class="home"><a class="active" href="#">Home</a></li>
-  %li.students
-    %h1
-      %a{:href => "students/new"} Students
-  %li.clients
-    %h1
-      %a{:href => "clients/new"} Clients
-  %li.sponsors
-    %h1
-      %a{:href => "sponsors/new"} Sponsors
-%br
+%body
+  %h1 apply
+  %h2
+    %a{:href => "students/new"}
+    = link_to 'STUDENTS', new_student_path, class: active(new_student_path)
+  %h2
+    %a{:href => "clients/new"}
+    = link_to "CLIENTS", new_client_path, class: active(new_client_path)
+  %h2
+    %a{:href => "sponsors/new"}
+    = link_to "SPONSORS", new_sponsor_path, class: active(new_sponsor_path)
+  %br
+  

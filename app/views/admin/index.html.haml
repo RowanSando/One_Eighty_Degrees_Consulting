@@ -1,6 +1,10 @@
-%ul
-  / <li class="home"><a class="active" href="#">Home</a></li>
-  %li
-    %h1
-      %a{:href => "admin/viewapps"} Applications
-%br
+%body
+  %h1 Admin Panel
+  %h2
+    %a
+    = link_to "Applications", admin_viewapps_path, class: active(admin_viewapps_path)
+  %h2
+    %a
+    = link_to "Edit Users", admin_editusers_path, class: active(admin_editusers_path)
+  %br
+  

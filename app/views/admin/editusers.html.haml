@@ -1,0 +1,24 @@
+%body
+%h1 Edit Users
+%table#users{:align => "center"}
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Member Type
+      %th Sign in Count
+      %th Last Sign in At
+      %th Delete User
+      %th Upgrade User
+  %tbody
+    - User.all.each do |user|
+      %tr
+        %td=user.name 
+        %td=user.email
+        %td=user.member_type
+        %td=user.sign_in_count
+        %td=user.last_sign_in_at
+        %td=link_to "Delete Account", admin_destroy_user_path(user), method: :delete
+        %td=link_to "Give Admin"
+%br
+

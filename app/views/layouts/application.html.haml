@@ -1,43 +1,49 @@
 !!!
 %html
   %head
-    %title One Eighty Degrees Consulting
+    %title 180 DC at Berkeley
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     %header
       .nav
-        %ul
+        %ul{:style => "float: left;"}
+          %img 
+          = link_to image_tag('logo.png'), '/'
+        %ul{:style => "float: right;"}
           %li.home
-            %a{:href => "/"} Home
+            %a
+            = link_to "home", home_path, class: active(home_path)
           %li.about
-            %a{:href => "/about"} About
+            %a
+            = link_to "about", about_path, class: active(about_path)
           %li.teams
-            %a{:href => "/team"} Team
+            %a
+            = link_to "teams", team_path, class: active(team_path)
           %li.applications
-            %a{:href => "/applications"} Apply
+            %a
+            = link_to "apply", applications_path, class: active(applications_path)
           - if user_signed_in? && current_user.member_type == 'admin'
             %li.admin
-              %a{:href => "/admin"} Admin
+              %a
+              = link_to "admin", admin_path, class: active(admin_path)
           - if user_signed_in?
             %li.logout
-              = link_to 'Logout', destroy_user_session_path, :method => 'delete'
+              = link_to 'logout', destroy_user_session_path, :method => 'delete'
+            .h4
             = 'signed in as ' + current_user.email
           - else
-            %li.signup
-              = link_to 'Sign up', new_user_registration_path
+            // %li.signup
+            //   = link_to 'sign up', new_user_registration_path, class: active(new_user_registration_path)
             %li.login  
-              = link_to 'Login', new_user_session_path
+              = link_to 'login', new_user_session_path, class: active(new_user_session_path)
     %br
-    
     - if flash[:notice]
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
     -elsif flash[:alert] 
       #warning.message= flash[:alert]
-      
     %br
-            
     = yield

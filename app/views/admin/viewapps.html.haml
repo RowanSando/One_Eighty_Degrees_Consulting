@@ -1,5 +1,5 @@
 %h1 Students
-%table#applications
+%table#applications{:align => "center"}
   %thead
     %tr
       %th Name
@@ -10,29 +10,28 @@
   %tbody
     - Student.all.each do |student|
       %tr
-        %td= student.name 
-        %td= student.email
-        %td= student.major
-        %td= student.graduation
-        %td= student.info
-
+        %td=student.name 
+        %td=student.email
+        %td=student.major
+        %td=student.graduation
+        %td=student.info
+%br
 %h1 Clients
-%table#applications
+%table#applications{:align => "center"}
   %thead
     %tr
       %th Name
       %th Email
       %th Comments
-      
   %tbody
     - Client.all.each do |client|
       %tr
         %td= client.name 
         %td= client.email
         %td= client.info
-
+%br
 %h1 Sponsors
-%table#applications
+%table#applications{:align => "center"}
   %thead
     %tr
       %th Name
@@ -44,3 +43,4 @@
         %td= sponsor.name 
         %td= sponsor.email
         %td= sponsor.info
+%br

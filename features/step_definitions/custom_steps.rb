@@ -44,3 +44,23 @@ end
 # Given /^(?:|I )am logged into the admin panel/ do
 #   pending
 # end
+
+Given /^"(.*)" is accepted/ do |user|
+  pending
+end
+
+Given /^"(.*)" is rejected/ do |user|
+  pending
+end
+
+Then /^(?:|I )should( not)? see the (.*) for (.*) as (.*)?/ do |should_not, field, user, value|
+  pending
+end
+
+Then /^(?:|I )select( the)? checkbox for (.*)?/ do |user|
+  pending
+end
+
+Then /^(?:|I )should( not)? see a (.*) file/ do |file_type|
+  pending
+end
