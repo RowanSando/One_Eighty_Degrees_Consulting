@@ -6,12 +6,11 @@ Rails.application.routes.draw do
     get '/admin/editusers/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   end
   resources :applications, only: [:index]
-  resources "studentapplications", only: [:new, :create]
+  resources "studentapplications"
   resources "clients", only: [:new, :create]
   resources "sponsors", only: [:new, :create]
   resources "users"
   # resources :cars, :except => [:new, :index, :delete]
-  
   get '/about' => 'static_pages#about'
   get '/team' => 'static_pages#team'
   get '/home' => 'static_pages#home'

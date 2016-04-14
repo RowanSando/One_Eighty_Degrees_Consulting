@@ -10,8 +10,8 @@
   %tbody
     - Studentapplication.all.each do |studentapplication|
       %tr
-        %td=studentapplication.name 
-        %td=studentapplication.email
+        %td=user.name 
+        %td=user.email
         %td=studentapplication.major
         %td=studentapplication.graduation
         %td=studentapplication.info

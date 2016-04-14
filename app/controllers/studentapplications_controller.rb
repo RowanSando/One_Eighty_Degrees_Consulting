@@ -2,7 +2,7 @@ class StudentapplicationsController < ApplicationController
   before_filter :ensure_loggedin!
   
   def studentapplication_params
-    params.require(:studentapplication).permit(:major, :graduation, :info)
+    params.require(:studentapplication).permit(:major, :graduation, :info, :user_id, :status)
   end
   
   def new
@@ -11,6 +11,7 @@ class StudentapplicationsController < ApplicationController
   
   def create
     @studentapplication = Studentapplication.new(studentapplication_params)
+    @studentapplication.status = "Pending"
     @studentapplication.save
   end
   

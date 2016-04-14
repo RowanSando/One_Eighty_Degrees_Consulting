@@ -32,27 +32,23 @@
     %p
     %p
     %p
-    %p
-    = form_tag('/studentapplications#create', :method => :post) do
+    = form_for @studentapplication, url: {action: "create"}, html: {class: "nifty_form"} do |f|
       %h2 Candidate Info
-      %br
       %h3 What is your Major?
-      = label :studentapplication, :major
-      = text_field :studentapplication, 'major', required: true
+      = f.label :studentapplication, :major
+      = f.text_field :major
       %br
       %h3 When do you graduate?
-      = label :studentapplication, :graduation
-      = text_field :studentapplication, 'graduation', required: true
+      = f.label :studentapplication, :graduation
+      = f.text_field :graduation
       %br
       %h3 How did you hear about this club?
-      = label :studentapplication, :info
-      = text_field :studentapplication, 'info', required: true
+      = f.label :studentapplication, :info
+      = f.text_field :info
       %br
       %br
-      %br
-      .form-actions
-        = submit_tag 'Submit'
-      %br
+      %b
+      = f.submit 'Submit'
       %br
       %br
       %br
