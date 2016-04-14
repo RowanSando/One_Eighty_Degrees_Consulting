@@ -12,6 +12,7 @@ class StudentapplicationsController < ApplicationController
   def create
     @studentapplication = Studentapplication.new(studentapplication_params)
     @studentapplication.status = "Pending"
+    @studentapplication.user_id = current_user.id
     @studentapplication.save
   end
   
