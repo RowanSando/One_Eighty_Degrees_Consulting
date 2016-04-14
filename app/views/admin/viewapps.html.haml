@@ -8,13 +8,13 @@
       %th Graduation Year
       %th Info
   %tbody
-    - Student.all.each do |student|
+    - Studentapplication.all.each do |studentapplication|
       %tr
-        %td=student.name 
-        %td=student.email
-        %td=student.major
-        %td=student.graduation
-        %td=student.info
+        %td=studentapplication.name 
+        %td=studentapplication.email
+        %td=studentapplication.major
+        %td=studentapplication.graduation
+        %td=studentapplication.info
 %br
 %h1 Clients
 %table#applications{:align => "center"}

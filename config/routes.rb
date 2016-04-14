@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/admin/editusers/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   end
   resources :applications, only: [:index]
-  resources "students", only: [:new, :create]
+  resources "studentapplications", only: [:new, :create]
   resources "clients", only: [:new, :create]
   resources "sponsors", only: [:new, :create]
   resources "users"

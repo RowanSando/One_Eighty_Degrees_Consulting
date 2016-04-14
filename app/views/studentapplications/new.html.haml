@@ -33,28 +33,20 @@
     %p
     %p
     %p
-    = form_tag('/students#create', :method => :post) do
+    = form_tag('/studentapplications#create', :method => :post) do
       %h2 Candidate Info
       %br
-      %h3 Your Name
-      = label :student, :name
-      = text_field :student, 'name', required: true
-      %br
-      %h3 Your Email
-      = label :student, :email
-      = text_field :student, 'email', required: true
-      %br
       %h3 What is your Major?
-      = label :student, :major
-      = text_field :student, 'major', required: true
+      = label :studentapplication, :major
+      = text_field :studentapplication, 'major', required: true
       %br
       %h3 When do you graduate?
-      = label :student, :graduation
-      = text_field :student, 'graduation', required: true
+      = label :studentapplication, :graduation
+      = text_field :studentapplication, 'graduation', required: true
       %br
       %h3 How did you hear about this club?
-      = label :student, :info
-      = text_field :student, 'info', required: true
+      = label :studentapplication, :info
+      = text_field :studentapplication, 'info', required: true
       %br
       %br
       %br

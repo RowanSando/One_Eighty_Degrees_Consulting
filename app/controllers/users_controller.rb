@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   def upgrade
       @user = User.find(params[:id])
       @user.member_type = "admin"
-      
       redirect_to "/admin/editusers"
   end
 end
