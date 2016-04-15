@@ -2,24 +2,19 @@
 
 %h1 Edit
 
-= form_tag studentapplication_path(@studentapplication), :method => :put do
-
-  = label :user, :name, 'Name'
-  = text_field :user, :name, required: true
-  
-  = label :user, :email, 'Email'
-  = email_field :user, :email, required: true
-
-  = label :studentapplication, :major, 'Major'
-  = text_field :studentapplication, :major, required: true
-  
-  = label :studentapplication, :graduation, 'Graduation'
-  = text_field :studentapplication, :graduation, required: true
-  
-  = label :studentapplication, :info, 'Info'
-  = text_field :studentapplication, :info
-  
-  = label :studentapplication, :info, 'Essay'
-  = text_field :studentapplication, :essay, required: true
-
-  = submit_tag 'Update Application'
+= simple_form_for @studentapplication, url: {action: "show"}, html: {class: "nifty_form"} do |f|
+  %br
+  = f.simple_fields_for :user, @studentapplication.user do |user|
+    %br
+    = user.input :name, :required => true
+    %br
+    = user.input :email, :as => :email, :required => true
+  %br
+  = f.input :info, :as => :text, :required => true, :input_html => {:rows => 10}
+  %br
+  %strong Attatch Resume
+  = f.input :file, as: :file
+  %br
+  = f.submit 'Update Application'
+  %br
+  %br

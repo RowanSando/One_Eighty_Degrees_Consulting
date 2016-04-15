@@ -32,26 +32,23 @@
     %p
     %p
     %p
-    = form_for @studentapplication, url: {action: "create"}, html: {class: "nifty_form"} do |f|
+    = simple_form_for @studentapplication, url: {action: "create"}, html: {class: "nifty_form"} do |f|
       %h2 Candidate Info
       %h3 What is your Major?
-      = f.label :studentapplication, :major
-      = f.text_field :major, required: true
+      = f.input :major, :required => true
       %br
       %h3 When do you graduate?
-      = f.label :studentapplication, :graduation
-      = f.text_field :graduation, required: true
+      = f.input :graduation, :required => true
       %br
       %h3 How did you hear about this club?
-      = f.label :studentapplication, :info
-      = f.text_field :info
-      %h4 Essay
-      = f.label :studentapplication, :essay
-      = f.text_field :essay, required: true
+      = f.input :info, :required => true
       %br
+      %h3 Essay
+      = f.input :info, :as => :text, :required => true, :input_html => {:rows => 10}
+      %strong Attatch Resume
+      = f.input :file, as: :file
       %br
-      %b
       = f.submit 'Submit'
       %br
-      %br
-      %br
+      %br    
+

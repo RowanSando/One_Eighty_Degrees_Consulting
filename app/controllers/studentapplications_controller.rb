@@ -6,7 +6,7 @@ class StudentapplicationsController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:studentapplication).permit(:user => [:name, :email])
   end
   
   def show
@@ -23,7 +23,6 @@ class StudentapplicationsController < ApplicationController
 
   def edit
     @studentapplication = Studentapplication.find(params[:id])
-    @user = current_user
     if DateTime.now > DateTime.new(2016, 5, 9, 23, 59, 59)
       flash[:notice] = "Sorry. The application cannot be edited after the deadline."
       redirect_to studentapplication_path(@studentapplication)
@@ -33,7 +32,7 @@ class StudentapplicationsController < ApplicationController
   def update
     @studentapplication = Studentapplication.find params[:id]
     @studentapplication.update_attributes!(studentapplication_params)
-    @studentapplication.user.update_attributes!(user_params)
+    @studentapplication.user.update_attributes!(user_params[:user])
     flash[:notice] = "Your application was successfully updated."
     redirect_to studentapplication_path(@studentapplication)
   end
@@ -49,10 +48,15 @@ class StudentapplicationsController < ApplicationController
   
   def create
     @studentapplication = Studentapplication.new(studentapplication_params)
-    @studentapplication.status = "Pending"
-    @studentapplication.user_id = current_user.id
-    current_user.studentapplication = @studentapplication
-    @studentapplication.save
+    if @studentapplication.valid?
+      @studentapplication.status = "Pending"
+      @studentapplication.user_id = current_user.id
+      current_user.studentapplication = @studentapplication
+      @studentapplication.save
+    else
+      flash[:notice] = "You are missing required fields."
+      redirect_to '/studentapplications/new'
+    end
   end
   
   def change_status
