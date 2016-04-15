@@ -2,7 +2,7 @@ class StudentapplicationsController < ApplicationController
   before_filter :ensure_loggedin!
   
   def studentapplication_params
-    params.require(:studentapplication).permit(:major, :graduation, :info, :essay, :user_id, :status)
+    params.require(:studentapplication).permit(:major, :graduation, :info, :essay, :file, :user_id, :status)
   end
   
   def user_params

@@ -8,16 +8,18 @@
         %th Major
         %th Graduation Year
         %th Info
+        %th Essay
         %th Status
         %th=check_box_tag 'Check All'
     %tbody
       - Studentapplication.all.each do |studentapplication|
         %tr
-          %td=studentapplication.name 
+          %td=studentapplication.user.name 
           %td=studentapplication.user.email
           %td=studentapplication.major
           %td=studentapplication.graduation
           %td=studentapplication.info
+          %td=link_to "View Essays", "/admin/viewessays/#{studentapplication.id}", target: "_blank"
           %td=studentapplication.status
           %td=check_box_tag "select_user[]", studentapplication.id
   %br

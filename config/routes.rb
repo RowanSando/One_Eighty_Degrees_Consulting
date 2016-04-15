@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin#index'
   get '/admin/viewapps' => 'admin#viewapps'
   get '/admin/editusers' => 'admin#editusers'
+  get '/admin/viewessays/:id' => 'admin#viewessays'
   post '/studentapplications/change_status' => 'studentapplications#change_status'
   post '/users/update_or_destroy' => 'users#update_or_destroy'
   # admin test

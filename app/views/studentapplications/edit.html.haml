@@ -10,9 +10,15 @@
     %br
     = user.input :email, :as => :email, :required => true
   %br
-  = f.input :info, :as => :text, :required => true, :input_html => {:rows => 10}
+  = f.input :major, :required => true
   %br
-  %strong Attatch Resume
+  = f.input :graduation, :required => true
+  %br
+  = f.input :info, :required => true
+  %br
+  = f.input :essay, :as => :text, :required => true, :input_html => {:rows => 10}
+  %br
+  %h3 Attatch Resume
   = f.input :file, as: :file
   %br
   = f.submit 'Update Application'

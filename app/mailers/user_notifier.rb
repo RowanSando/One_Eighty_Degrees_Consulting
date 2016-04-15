@@ -1,9 +1,8 @@
 class UserNotifier < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: '180degreesconsultingnotify@gmail.com'
  
-  def welcome_email(user)
+  def notify_user(user)
     @user = user
-    @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    mail(to: @user.email, subject: 'Notification from 180 Degrees Consulting')
   end
 end
