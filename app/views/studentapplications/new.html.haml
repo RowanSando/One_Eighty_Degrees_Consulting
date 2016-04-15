@@ -34,9 +34,6 @@
     %p
     = form_for @studentapplication, url: {action: "create"}, html: {class: "nifty_form"} do |f|
       %h2 Candidate Info
-      %h3 What is your name?
-      = f.label :studentapplication, :name
-      = f.text_field :name
       %h3 What is your Major?
       = f.label :studentapplication, :major
       = f.text_field :major
@@ -48,6 +45,9 @@
       %h3 How did you hear about this club?
       = f.label :studentapplication, :info
       = f.text_field :info
+      %h4 Essay
+      = f.label :studentapplication, :essay
+      = f.text_field :essay
       %br
       %br
       %b

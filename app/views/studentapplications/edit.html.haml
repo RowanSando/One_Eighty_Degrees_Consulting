@@ -1,11 +1,14 @@
 -# edit.html.haml
 
-%h1 Edit Existing Application
+%h1 Edit
 
 = form_tag studentapplication_path(@studentapplication), :method => :put do
 
-  = label :studentapplication, :name, 'Name'
-  = text_field :studentapplication, 'name'
+  = label :user, :name, 'Name'
+  = text_field :user, :name
+  
+  = label :user, :email, 'Email'
+  = email_field :user, :email
 
   = label :studentapplication, :major, 'Major'
   = text_field :studentapplication, :major
@@ -15,5 +18,8 @@
   
   = label :studentapplication, :info, 'Info'
   = text_field :studentapplication, :info
+  
+  = label :studentapplication, :info, 'Essay'
+  = text_field :studentapplication, :essay
 
-  = submit_tag 'Update Application Info'
+  = submit_tag 'Update Application'

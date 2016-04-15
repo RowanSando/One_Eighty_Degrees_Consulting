@@ -2,7 +2,6 @@
 =form_tag studentapplications_change_status_path, method: "post" do
   %table#applications{:align => 'center'}
     %thead
-      // = javascript_include_tag 'admin'
       %tr
         %th Name
         %th Email
@@ -21,11 +20,11 @@
           %td=studentapplication.info
           %td=studentapplication.status
           %td=check_box_tag "select_user[]", studentapplication.id
-          
+  %br
+  = text_area_tag 'text', '', size: "30x8", placeholder: "This message will be sent to those who have their application status changed"
   %br
   = button_tag 'Accept Selected', name: "accept"
   = button_tag 'Reject Selected', name: "reject"
-
 %h1 Clients
 %table#applications{:align => 'center'}
   %thead

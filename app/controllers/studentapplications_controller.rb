@@ -2,20 +2,34 @@ class StudentapplicationsController < ApplicationController
   before_filter :ensure_loggedin!
   
   def studentapplication_params
-    params.require(:studentapplication).permit(:name, :major, :graduation, :info, :user_id, :status)
+    params.require(:studentapplication).permit(:major, :graduation, :info, :essay, :user_id, :status)
+  end
+  
+  def user_params
+    params.require(:user).permit(:name, :email)
   end
   
   def show
     @studentapplication = Studentapplication.find(params[:id])
+    status = @studentapplication.status
+    if status == "Pending"
+      @status = "Your application has been received. We are presently in the process of reviewing."
+    elsif status == "Accepted"
+      @status = "Congratulations! You are accepted."
+    else
+      @status = "Sorry."
+    end
   end
 
   def edit
     @studentapplication = Studentapplication.find(params[:id])
+    @user = current_user
   end
   
   def update
     @studentapplication = Studentapplication.find params[:id]
     @studentapplication.update_attributes!(studentapplication_params)
+    @studentapplication.user.update_attributes!(user_params)
     flash[:notice] = "Your application was successfully updated."
     redirect_to studentapplication_path(@studentapplication)
   end
@@ -40,13 +54,16 @@ class StudentapplicationsController < ApplicationController
   def change_status
     if params.has_key?("accept")
       value = "Accepted"
-    else
+    else params.has_key?("reject")
       value = "Pending"
     end
-    params["select_user"].each do |id|
-      application = Studentapplication.find(id)
-      application.status = value
-      application.save
+    if params.has_key?("select_user")
+      params["select_user"].each do |id|
+        application = Studentapplication.find(id)
+        application.status = value
+        application.message = params["text"]
+        application.save
+      end
     end
     redirect_to admin_viewapps_path
   end

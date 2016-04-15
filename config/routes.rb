@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'
-    get '/admin/editusers/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   end
   resources :applications, only: [:index]
   resources "studentapplications"
@@ -18,7 +17,7 @@ Rails.application.routes.draw do
   get '/admin/viewapps' => 'admin#viewapps'
   get '/admin/editusers' => 'admin#editusers'
   post '/studentapplications/change_status' => 'studentapplications#change_status'
-  
+  post '/users/update_or_destroy' => 'users#update_or_destroy'
   # admin test
   # get '/admin/' => 'admin#admin_page'
   

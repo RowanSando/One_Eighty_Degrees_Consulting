@@ -1,36 +1,42 @@
 # As an admin, 
 # I want to be able to delete a user, 
-# so that they can no longer use the website.
+# so that they no longer are in the user database.
 
 Feature: delete users
   As an admin,
   I want to be able to delete a user,
-  So that they can no longer use the website.
+  So that they no longer are in the user database
 
   Background:
     # Given I am not logged in
     Given the following users exist:
     | email                       | password    | member_type |
     | admin@berkeley.edu          | password123 | admin       |
-    | user1@berkeley.edu          | 123         | appplicant  |
+    | user1@berkeley.edu          | 123         | applicant  |
     | user2@berkeley.edu          | 123         | applicant   |
     | user3@berkeley.edu          | 123         | applicant   |
   
-  Scenario: deleting bulk users
+  Scenario: bulk deleting users
     Given I am on the admin page
     And I follow "Edit Users"
     
-    And I should see the status for "user1@berkeley.edu" as "Applicant"
-    And I should see the status for "user2@berkeley.edu" as "Applicant"
-    And I should see the status for "user3@berkeley.edu" as "Applicant"
-    And I should see the status for "admin@berkeley.edu" as "Admin"
+    Then I should be on the Edit Users page
+    And I should see the member_type for "user1@berkeley.edu" as "Applicant"
+    And I should see the member_type for "user2@berkeley.edu" as "Applicant"
+    And I should see the member_type for "user3@berkeley.edu" as "Applicant"
+    And I should see the member_type for "admin@berkeley.edu" as "Admin"
     
     And I select checkbox for "user1@berkeley.edu"
     And I select checkbox for "user2@berkeley.edu"
-    And I press "Delete All"
+    And I press "Delete Users"
     
-    Then I should see "Updated Successfully"
-    And I should not see the status for "user1@berkeley.edu" as "Applicant"
-    And I should not see the status for "user2@berkeley.edu" as "Applicant"
-    And I should see the status for "user3@berkeley.edu" as "Applicant"
-    And I should see the status for "admin@berkeley.edu" as "Admin"
+    And I should not see "user1@berkeley.edu"
+    And I should not see "user2@berkeley.edu"
+    And I should see the member_type for "user3@berkeley.edu" as "Applicant"
+    And I should see the member_type for "admin@berkeley.edu" as "Admin"
+    
+    And I follow "Admin"
+    And I follow "Applications"
+    Then I should be on the Applications page
+    And I should not see "user1@berkeley.edu"
+    And I should not see "user2@berkeley.edu"

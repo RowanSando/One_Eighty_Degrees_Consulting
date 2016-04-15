@@ -1,9 +1,13 @@
 -# in app/views/studentapplications/show.html.haml
 
-%h2 Hi #{@studentapplication.name},
-Your application:
+%h1 Hi #{@studentapplication.user.name},
+%h4 #{@status}
+%h4 #{@studentapplication.message}
+%h4 #{Date.today}
 
-%ul#details
+%h3 Your application:
+
+%body#details{:align => "center"}
   %li
     Email:
     = @studentapplication.user.email
@@ -16,9 +20,8 @@ Your application:
   %li
     Info:
     = @studentapplication.info
-
-%h3 Status:
-
-%p#status= @studentapplication.status
+  %li
+    Essay:
+    = @studentapplication.essay
 
 = link_to 'Edit', edit_studentapplication_path(@studentapplication)
