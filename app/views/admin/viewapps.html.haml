@@ -7,14 +7,21 @@
       %th Major
       %th Graduation Year
       %th Info
+      %th Status
+      %th=check_box_tag "Check All"
   %tbody
     - Studentapplication.all.each do |studentapplication|
       %tr
-        %td=user.name 
-        %td=user.email
+        %td=studentapplication.name 
+        %td=studentapplication.user.email
         %td=studentapplication.major
         %td=studentapplication.graduation
         %td=studentapplication.info
+        %td=studentapplication.status
+        %td=check_box_tag "Select User"
+%br
+= link_to button_tag "Accept Selected"
+= link_to button_tag "Reject Selected"
 %br
 %h1 Clients
 %table#applications{:align => "center"}
