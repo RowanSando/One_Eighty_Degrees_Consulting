@@ -71,6 +71,7 @@ class StudentapplicationsController < ApplicationController
         application.status = value
         application.message = params["text"]
         application.save
+        UserNotifier.notify_user(application.user).deliver_now
       end
     end
     redirect_to admin_viewapps_path
