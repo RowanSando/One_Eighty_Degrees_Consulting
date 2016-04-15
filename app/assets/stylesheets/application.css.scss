@@ -250,3 +250,38 @@ td {
 hr {
   width: 1200px;
 }
+
+// Team Page CSS
+.container_team {
+  width: 1080px;
+  height: auto;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0px;
+  bottom: 0px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.team_header {
+  text-align: left;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.logoheader {
+  float:left; 
+  height:150px;
+  width:400px; 
+  padding-top: 0px;
+}
+
+.team_textbox {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 22px;
+  color: #408000;
+  margin-bottom: 45px;
+}

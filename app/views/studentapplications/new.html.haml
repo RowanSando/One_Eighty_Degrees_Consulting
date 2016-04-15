@@ -36,18 +36,18 @@
       %h2 Candidate Info
       %h3 What is your Major?
       = f.label :studentapplication, :major
-      = f.text_field :major
+      = f.text_field :major, required: true
       %br
       %h3 When do you graduate?
       = f.label :studentapplication, :graduation
-      = f.text_field :graduation
+      = f.text_field :graduation, required: true
       %br
       %h3 How did you hear about this club?
       = f.label :studentapplication, :info
       = f.text_field :info
       %h4 Essay
       = f.label :studentapplication, :essay
-      = f.text_field :essay
+      = f.text_field :essay, required: true
       %br
       %br
       %b

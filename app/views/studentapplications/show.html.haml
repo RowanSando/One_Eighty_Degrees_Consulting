@@ -3,7 +3,6 @@
 %h1 Hi #{@studentapplication.user.name},
 %h4 #{@status}
 %h4 #{@studentapplication.message}
-%h4 #{Date.today}
 
 %h3 Your application:
 
@@ -25,3 +24,7 @@
     = @studentapplication.essay
 
 = link_to 'Edit', edit_studentapplication_path(@studentapplication)
+
+%p
+***Application Deadline****
+%br Thursday May 12th - 11:59pm

@@ -5,21 +5,21 @@
 = form_tag studentapplication_path(@studentapplication), :method => :put do
 
   = label :user, :name, 'Name'
-  = text_field :user, :name
+  = text_field :user, :name, required: true
   
   = label :user, :email, 'Email'
-  = email_field :user, :email
+  = email_field :user, :email, required: true
 
   = label :studentapplication, :major, 'Major'
-  = text_field :studentapplication, :major
+  = text_field :studentapplication, :major, required: true
   
   = label :studentapplication, :graduation, 'Graduation'
-  = text_field :studentapplication, 'graduation'
+  = text_field :studentapplication, :graduation, required: true
   
   = label :studentapplication, :info, 'Info'
   = text_field :studentapplication, :info
   
   = label :studentapplication, :info, 'Essay'
-  = text_field :studentapplication, :essay
+  = text_field :studentapplication, :essay, required: true
 
   = submit_tag 'Update Application'

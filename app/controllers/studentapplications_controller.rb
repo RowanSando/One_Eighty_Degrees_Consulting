@@ -24,6 +24,10 @@ class StudentapplicationsController < ApplicationController
   def edit
     @studentapplication = Studentapplication.find(params[:id])
     @user = current_user
+    if DateTime.now > DateTime.new(2016, 5, 9, 23, 59, 59)
+      flash[:notice] = "Sorry. The application cannot be edited after the deadline."
+      redirect_to studentapplication_path(@studentapplication)
+    end
   end
   
   def update
