@@ -1,1 +1,19 @@
-= render 'form'
+-# edit.html.haml
+
+%h1 Edit Existing Application
+
+= form_tag studentapplication_path(@studentapplication), :method => :put do
+
+  = label :studentapplication, :name, 'Name'
+  = text_field :studentapplication, 'name'
+
+  = label :studentapplication, :major, 'Major'
+  = text_field :studentapplication, :major
+  
+  = label :studentapplication, :graduation, 'Graduation'
+  = text_field :studentapplication, 'graduation'
+  
+  = label :studentapplication, :info, 'Info'
+  = text_field :studentapplication, :info
+
+  = submit_tag 'Update Application Info'

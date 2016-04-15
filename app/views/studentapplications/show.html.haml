@@ -1,0 +1,24 @@
+-# in app/views/studentapplications/show.html.haml
+
+%h2 Hi #{@studentapplication.name},
+Your application:
+
+%ul#details
+  %li
+    Email:
+    = @studentapplication.user.email
+  %li
+    Major:
+    = @studentapplication.major
+  %li
+    Graduation:
+    = @studentapplication.graduation
+  %li
+    Info:
+    = @studentapplication.info
+
+%h3 Status:
+
+%p#status= @studentapplication.status
+
+= link_to 'Edit', edit_studentapplication_path(@studentapplication)
