@@ -37,6 +37,20 @@ class StudentapplicationsController < ApplicationController
     @studentapplication.save
   end
   
+  def change_status
+    if params.has_key?("accept")
+      value = "Accepted"
+    else
+      value = "Pending"
+    end
+    params["select_user"].each do |id|
+      application = Studentapplication.find(id)
+      application.status = value
+      application.save
+    end
+    redirect_to admin_viewapps_path
+  end
+  
   private
 		def ensure_loggedin!
 			unless user_signed_in?

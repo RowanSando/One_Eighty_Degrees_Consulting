@@ -1,30 +1,33 @@
 %h1 Students
-%table#applications{:align => "center"}
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Major
-      %th Graduation Year
-      %th Info
-      %th Status
-      %th=check_box_tag "Check All"
-  %tbody
-    - Studentapplication.all.each do |studentapplication|
+=form_tag studentapplications_change_status_path, method: "post" do
+  %table#applications{:align => 'center'}
+    %thead
+      // = javascript_include_tag 'admin'
       %tr
-        %td=studentapplication.name 
-        %td=studentapplication.user.email
-        %td=studentapplication.major
-        %td=studentapplication.graduation
-        %td=studentapplication.info
-        %td=studentapplication.status
-        %td=check_box_tag "Select User"
-%br
-= link_to button_tag "Accept Selected"
-= link_to button_tag "Reject Selected"
-%br
+        %th Name
+        %th Email
+        %th Major
+        %th Graduation Year
+        %th Info
+        %th Status
+        %th=check_box_tag 'Check All'
+    %tbody
+      - Studentapplication.all.each do |studentapplication|
+        %tr
+          %td=studentapplication.name 
+          %td=studentapplication.user.email
+          %td=studentapplication.major
+          %td=studentapplication.graduation
+          %td=studentapplication.info
+          %td=studentapplication.status
+          %td=check_box_tag "select_user[]", studentapplication.id
+          
+  %br
+  = button_tag 'Accept Selected', name: "accept"
+  = button_tag 'Reject Selected', name: "reject"
+
 %h1 Clients
-%table#applications{:align => "center"}
+%table#applications{:align => 'center'}
   %thead
     %tr
       %th Name
