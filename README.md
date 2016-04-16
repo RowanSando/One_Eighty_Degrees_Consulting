@@ -13,3 +13,5 @@ heroku: http://one-eighty-degrees-consulting.herokuapp.com
 login (admin): admin1@berkeley.edu
       (user):  user@berkeley.edu
 password (for both): password123
+
+Customer Video: https://www.youtube.com/watch?v=ObbPqRRGdpA
