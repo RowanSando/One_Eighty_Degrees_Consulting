@@ -23,12 +23,12 @@
           %td=studentapplication.status
           %td=check_box_tag "select_user[]", studentapplication.id
   %br
-  = text_area_tag 'text', '', size: "30x8", placeholder: "This message will be sent to those who have their application status changed"
+  = text_area_tag 'text', '', size: "30x5", placeholder: "This message will be sent to those who have their application status changed"
   %br
   = button_tag 'Accept Selected', name: "accept"
   = button_tag 'Reject Selected', name: "reject"
 %h1 Clients
-%table#applications{:align => 'center'}
+%table#clients{:align => 'center'}
   %thead
     %tr
       %th Name
@@ -42,7 +42,7 @@
         %td= client.info
 %br
 %h1 Sponsors
-%table#applications{:align => "center"}
+%table#sponsors{:align => "center"}
   %thead
     %tr
       %th Name

@@ -8,7 +8,9 @@ class AdminController < ApplicationController
 	end
 	
 	def viewessays
-		@essay = Studentapplication.find(params[:id]).essay
+		app = Studentapplication.find(params[:id])
+		@essay = app.essay
+		@name = app.user.name
 	end
 	
 	private

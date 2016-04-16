@@ -14,30 +14,30 @@
         %ul{:style => "float: right;"}
           %li.home
             %a
-            = link_to "home", home_path, class: active(home_path)
+            = link_to "Home", home_path, class: active(home_path)
           %li.about
             %a
-            = link_to "about", about_path, class: active(about_path)
+            = link_to "About", about_path, class: active(about_path)
           %li.teams
             %a
-            = link_to "teams", team_path, class: active(team_path)
+            = link_to "Teams", team_path, class: active(team_path)
           %li.applications
             %a
-            = link_to "apply", applications_path, class: active(applications_path)
+            = link_to "Apply", applications_path, class: active(applications_path)
           - if user_signed_in? && current_user.member_type == 'admin'
             %li.admin
               %a
-              = link_to "admin", admin_path, class: active(admin_path)
+              = link_to "Admin", admin_path, class: active(admin_path)
           - if user_signed_in?
             %li.logout
-              = link_to 'logout', destroy_user_session_path, :method => 'delete'
+              = link_to 'Logout', destroy_user_session_path, :method => 'delete'
             .h4
             = 'signed in as ' + current_user.email
           - else
             // %li.signup
             //   = link_to 'sign up', new_user_registration_path, class: active(new_user_registration_path)
             %li.login  
-              = link_to 'login', new_user_session_path, class: active(new_user_session_path)
+              = link_to 'Login', new_user_session_path, class: active(new_user_session_path)
     %br
     - if flash[:notice]
       #notice.message= flash[:notice]
