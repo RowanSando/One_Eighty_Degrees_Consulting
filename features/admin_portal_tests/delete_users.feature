@@ -12,19 +12,24 @@ Feature: delete users
     Given the following users exist:
     | email                       | password    | member_type |
     | admin@berkeley.edu          | password123 | admin       |
-    | user1@berkeley.edu          | 123         | applicant  |
-    | user2@berkeley.edu          | 123         | applicant   |
-    | user3@berkeley.edu          | 123         | applicant   |
+    | user1@berkeley.edu          | password123 | applicant   |
+    | user2@berkeley.edu          | password123 | applicant   |
+    | user3@berkeley.edu          | password123 | applicant   |
   
   Scenario: bulk deleting users
-    Given I am on the admin page
+    Given I am on the home page
+    When I follow "Login"
+    And I fill in "Email" with "admin@berkeley.edu"
+    And I fill in "Password" with "password123"
+    And I press "Log in"
+    And I follow "Admin"
     And I follow "Edit Users"
     
-    Then I should be on the Edit Users page
-    And I should see the member_type for "user1@berkeley.edu" as "Applicant"
-    And I should see the member_type for "user2@berkeley.edu" as "Applicant"
-    And I should see the member_type for "user3@berkeley.edu" as "Applicant"
-    And I should see the member_type for "admin@berkeley.edu" as "Admin"
+    Then I should see "Edit Users"
+    And I should see "user1@berkeley.edu" 
+    And I should see "user2@berkeley.edu" 
+    And I should see "user3@berkeley.edu"
+    And I should see "admin@berkeley.edu"
     
     And I select checkbox for "user1@berkeley.edu"
     And I select checkbox for "user2@berkeley.edu"
@@ -32,11 +37,11 @@ Feature: delete users
     
     And I should not see "user1@berkeley.edu"
     And I should not see "user2@berkeley.edu"
-    And I should see the member_type for "user3@berkeley.edu" as "Applicant"
-    And I should see the member_type for "admin@berkeley.edu" as "Admin"
+    And I should see "user3@berkeley.edu" 
+    And I should see "admin@berkeley.edu" 
     
-    And I follow "Admin"
-    And I follow "Applications"
-    Then I should be on the Applications page
-    And I should not see "user1@berkeley.edu"
-    And I should not see "user2@berkeley.edu"
+    # And I follow "Admin"
+    # And I follow "Applications"
+    # Then I should be on the admin viewapps page
+    # And I should not see "user1@berkeley.edu"
+    # And I should not see "user2@berkeley.edu"

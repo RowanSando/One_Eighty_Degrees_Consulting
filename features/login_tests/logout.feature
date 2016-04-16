@@ -1,4 +1,4 @@
-# As a potential corporate sponsor, I want to be able to apply so that I can get connected with 180-Degrees.
+#As an admin or application, I want to be able to log out, so others can login.
 Feature: feature logout
   As an admin or application,
   I want to be able to log out,

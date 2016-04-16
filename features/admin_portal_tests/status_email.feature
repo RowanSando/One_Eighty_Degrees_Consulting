@@ -10,7 +10,7 @@ Feature: sending status email
     | email                       | password    | member_type |
     | admin@berkeley.edu          | password123 | admin       |
     
-    Given the following students exist:
+    Given the following applications exist:
     | name        | email                     | major         | graduation | info       | status  |
     | Bob Saget   | wow@chickennuggets.com    | French        | 1923       | wowzers!   | pending |
     | Jeremy Lin  | baller@ballah.com         | Baller        | 2007       | bball      | pending |
@@ -25,6 +25,6 @@ Feature: sending status email
     And I follow "Admin"
     And I follow "Applications"
     And I select checkbox for "wow@chickennuggets.com"
-    And I press "Accept all"
-    And I fill in "Message" with "gratz"
-    Then I should see "Status updated."
+    And I fill in "text" with "gratz"
+    And I press "Accept Selected"
+    Then I should see "User has been notified of their updated application status by email."

@@ -63,7 +63,7 @@ class StudentapplicationsController < ApplicationController
     if params.has_key?("accept")
       value = "Accepted"
     else params.has_key?("reject")
-      value = "Pending"
+      value = "Rejected"
     end
     if params.has_key?("select_user")
       params["select_user"].each do |id|
@@ -72,6 +72,7 @@ class StudentapplicationsController < ApplicationController
         application.message = params["text"]
         application.save
         UserNotifier.notify_user(application.user).deliver_now
+        flash[:notice] = "User has been notified of their updated application status by email."
       end
     end
     redirect_to admin_viewapps_path

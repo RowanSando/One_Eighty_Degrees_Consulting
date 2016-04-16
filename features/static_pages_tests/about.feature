@@ -11,7 +11,7 @@ Feature: about page
   Scenario: seeing the about page successfully
     Given I am on the home page
     When I follow "About"
-    Then I should see "About - 180 Degrees"
+    Then I should see "About"
   
   # checking the route
   Scenario: going to about page successfully

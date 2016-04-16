@@ -8,27 +8,62 @@ Feature: feature apply
     # Given I am not logged in
     Given the following users exist:
     | email                       | password    | member_type |
-    | admin@berkeley.edu          | password123 | admin       |
-    | user1@berkeley.edu          | 123         | appplicant  |
-    | user2@berkeley.edu          | 123         | applicant   |
-    | user3@berkeley.edu          | 123         | applicant   |    
+    | user1@berkeley.edu          | 12345678         | appplicant  |
 
   # checking the route
-  # Happy path:
-  Scenario: going to application page successfully
+  
+  Scenario: going to log in page successfully if not logged in
     Given I am on the home page
-    When I follow "Login"
-    And I fill in "Email" with "user1@berkeley.edu"
-    And I fill in "Password" with "123"
-    And I press "Log in"
+    When I follow "Apply"
+    And I follow "STUDENTS"
+    Then I should be on the new user session page
 
-    Then I should be on the application for students page
+  
+  Scenario: going to application page successfully once logged in
+    Given I am on the new user session page
+    When I fill in "Email" with "user1@berkeley.edu"
+    And I fill in "Password" with "12345678"
+    And I press "Log in"
+    And I follow "Apply"
+    And I follow "STUDENTS"
+    Then I should be on the application for studentapplications page
     
+      # Happy path:
+
   Scenario: successful application
-    Given I am on the application for students page
-    When I fill in "Name" with "Rowan"
-    And I fill in "Email" with "rowan@funbun.com"
+    Given I am on the new user session page
+    When I fill in "Email" with "user1@berkeley.edu"
+    And I fill in "Password" with "12345678"
+    And I press "Log in"
+    And I am on the application for studentapplications page
     And I fill in "Major" with "EECS"
     And I fill in "Graduation" with "2016"
+    And I fill in "Info" with "info"
+    And I fill in "Essay" with "essay"
     And I press "Submit"
     Then I should see "Thank you for your message. We'll get back to you soon."
+    
+  #sad path:
+  Scenario: unsuccessful application
+    Given I am on the new user session page
+    When I fill in "Email" with "user1@berkeley.edu"
+    And I fill in "Password" with "12345678"
+    And I press "Log in"
+    And I am on the application for studentapplications page
+    And I press "Submit"
+    Then I should see "You are missing required fields"
+    
+  Scenario: the default pending status
+    Given I am on the new user session page
+    When I fill in "Email" with "user1@berkeley.edu"
+    And I fill in "Password" with "12345678"
+    And I press "Log in"
+    And I am on the application for studentapplications page
+    And I fill in "Major" with "EECS"
+    And I fill in "Graduation" with "2016"
+    And I fill in "Info" with "info"
+    And I fill in "Essay" with "essay"
+    And I press "Submit"
+    And I follow "View My Application"
+    Then I should see "We are presently in the process of reviewing."
+    

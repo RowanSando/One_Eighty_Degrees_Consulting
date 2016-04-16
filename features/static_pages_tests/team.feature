@@ -11,7 +11,7 @@ Feature: team page
   Scenario: seeing the team page successfully
     Given I am on the home page
     And I follow "Team"
-    Then I should see "Team - 180 Degrees"
+    Then I should see "Teams"
   
   # checking the route
   Scenario: going to team page successfully

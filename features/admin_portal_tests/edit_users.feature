@@ -21,24 +21,24 @@ Feature: edit users page
     And I press "Log in"
     And I follow "Admin"
     And I follow "Edit Users"
-    Then I should be on the Edit Users page
-    
-    And I should see the member_type for "admin@berkeley.edu" as "admin"
-    And I should see the member_type for "admin1@berkeley.edu" as "admin"
-    And I should see the member_type for "applicant@berkeley.edu" as "applicant"
+
+    And I should see the "member_type" for "admin@berkeley.edu" as "admin"
+    And I should see the "member_type" for "admin1@berkeley.edu" as "admin"
+    And I should see the "member_type" for "applicant@berkeley.edu" as "applicant"
 
     And I select checkbox for "applicant@berkeley.edu"
     And I press "Give Admin"
-    And I should see the member_type for "applicant@berkeley.edu" as "Admin"
+    And I should see the "member_type" for "applicant@berkeley.edu" as "admin"
     
     And I follow "Logout"
-    And I follow "Log in"
+    And I follow "Login"
     And I fill in "Email" with "applicant@berkeley.edu"
+    And I fill in "Password" with "password123"
     And I press "Log in"
     And I should see "Admin"
 
 # removing admin access
-  Scenario: as an admin, I should be able to make a user an admin
+  Scenario: as an admin, I should be able to remove a user as an admin
     Given I am on the home page
     When I follow "Login"
     And I fill in "Email" with "admin1@berkeley.edu"
@@ -46,14 +46,17 @@ Feature: edit users page
     And I press "Log in"
     And I follow "Admin"
     And I follow "Edit Users"
-    Then I should be on the Edit Users page
     
+    And I should see the "member_type" for "admin@berkeley.edu" as "admin"
+    And I should see the "member_type" for "admin1@berkeley.edu" as "admin"
+    And I should see the "member_type" for "applicant@berkeley.edu" as "applicant"
+
     And I select checkbox for "admin@berkeley.edu"
     And I press "Remove Admin"
-    And I should not see the member_type for "admin@berkeley.edu" as "Admin"
+    And I should not see the "member_type" for "admin@berkeley.edu" as "admin"
     
     And I follow "Logout"
-    And I follow "Log in"
+    And I follow "Login"
     And I fill in "Email" with "admin@berkeley.edu"
     And I press "Log in"
     And I should not see "Admin"

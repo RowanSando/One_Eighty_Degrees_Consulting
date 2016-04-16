@@ -9,7 +9,7 @@ Feature: feature apply
   Scenario: going to application page successfully
     Given I am on the home page
     When I follow "Apply"
-    And I follow "Clients"
+    And I follow "CLIENTS"
     Then I should be on the application for clients page
     
   Scenario: successful application

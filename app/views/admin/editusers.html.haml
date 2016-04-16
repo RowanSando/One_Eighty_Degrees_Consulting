@@ -14,13 +14,13 @@
       %tbody
         - User.all.each do |user|
           %tr
-            %td=user.name 
-            %td=user.email
-            %td=user.member_type
-            %td=user.sign_in_count
-            %td=user.last_sign_in_at
+            %td.name=user.name 
+            %td.email=user.email
+            %td.member_type=user.member_type
+            %td.count=user.sign_in_count
+            %td.last=user.last_sign_in_at
             
-            %td=check_box_tag "select_user[]", user.id
+            %td.select=check_box_tag "select_user[]", user.id
     %br
     = button_tag 'Delete Users', name: "delete"
     = button_tag 'Give Admin', name: "giveadmin"

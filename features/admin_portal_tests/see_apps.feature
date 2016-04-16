@@ -11,7 +11,7 @@ Feature: seeing applications
     | email                       | password    | member_type |
     | admin@berkeley.edu          | password123 | admin       |
     
-    Given the following students exist:
+    Given the following applications exist:
     | name        | email                     | major         | graduation | info       |
     | Bob Saget   | wow@chickennuggets.com    | French        | 1923       | wowzers!   |  
     | Jeremy Lin  | baller@ballah.com         | Baller        | 2007       | bball      |
