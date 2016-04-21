@@ -77,3 +77,7 @@ end
 When /^(?:|I )follow (.*) for (.*)$/ do |link, user|
   find(:xpath, "//tr[contains(.,#{user})]/td/a").click
 end
+
+Given /^the deadline is (.*)$/ do |deadline|
+  pending
+end
