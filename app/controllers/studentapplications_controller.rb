@@ -31,10 +31,19 @@ class StudentapplicationsController < ApplicationController
   
   def update
     @studentapplication = Studentapplication.find params[:id]
-    @studentapplication.update_attributes!(studentapplication_params)
-    @studentapplication.user.update_attributes!(user_params[:user])
-    flash[:notice] = "Your application was successfully updated."
-    redirect_to studentapplication_path(@studentapplication)
+    if not studentapplication_params[:file].nil?
+      @studentapplication.remove_file!
+      @studentapplication.save
+    end
+    begin    
+      @studentapplication.update_attributes!(studentapplication_params)
+      @studentapplication.user.update_attributes!(user_params[:user])
+      flash[:notice] = "Your application was successfully updated."
+      redirect_to studentapplication_path(@studentapplication)
+    rescue ActiveRecord::RecordInvalid
+      flash[:notice] = "Sorry. Your resume should be a PDF."
+      redirect_to edit_studentapplication_path(@studentapplication)
+    end
   end
   
   def new
@@ -54,7 +63,7 @@ class StudentapplicationsController < ApplicationController
       current_user.studentapplication = @studentapplication
       @studentapplication.save
     else
-      flash[:notice] = "You are missing required fields."
+      flash[:notice] = "You are missing required fields or choosing a non-PDF resume."
       redirect_to '/studentapplications/new'
     end
   end
@@ -81,6 +90,7 @@ class StudentapplicationsController < ApplicationController
   private
 		def ensure_loggedin!
 			unless user_signed_in?
+			  flash[:notice] = "Please log in before you apply or check applications."
 				redirect_to new_user_session_path
 			end
 		end

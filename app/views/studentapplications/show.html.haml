@@ -22,9 +22,14 @@
   %li
     Essay:
     = @studentapplication.essay
-
+  %li
+    Resume:
+    %a{:href => @studentapplication.file}>#{@studentapplication.file_identifier}
+%p
 = link_to 'Edit', edit_studentapplication_path(@studentapplication)
 
 %p
 ***Application Deadline****
 %br Thursday May 12th - 11:59pm
+%p
+%p

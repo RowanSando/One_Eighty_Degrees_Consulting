@@ -17,9 +17,9 @@
   = f.input :info, :required => true
   %br
   = f.input :essay, :as => :text, :required => true, :input_html => {:rows => 10}
-  %br
-  %h3 Attatch Resume
-  = f.input :file, as: :file
+
+  %h3 Update Resume <a href = #{@studentapplication.file}>#{@studentapplication.file_identifier}<a/> (* PDF only)
+  = f.input :file, :as => :file
   %br
   = f.submit 'Update Application'
   %br

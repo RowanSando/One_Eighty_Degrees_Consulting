@@ -42,8 +42,8 @@
       = f.input :info, :required => true
       %h3 Essay
       = f.input :essay, :as => :text, :required => true, :input_html => {:rows => 10}
-      %h3 Attatch Resume
-      = f.input :file, :as => :file
+      %h3 Attatch Resume (* PDF only)
+      = f.input :file, :as => :file, :required => true
       = f.submit 'Submit'
       %br
       %br    
