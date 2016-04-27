@@ -1,10 +1,10 @@
 %body
-  %h1 Admin Panel
+  .container_graybox
+    %p Admin Panel
   %h2
     %a
-    = link_to "Applications", admin_viewapps_path, class: active(admin_viewapps_path)
+    = link_to "Applications", admin_viewapps_path
   %h2
     %a
-    = link_to "Edit Users", admin_editusers_path, class: active(admin_editusers_path)
-  %br
+    = link_to "Edit Users", admin_editusers_path
   

@@ -1,4 +1,5 @@
-%h1 Students
+.container_graybox
+  %p Students
 =form_tag studentapplications_change_status_path, method: "post" do
   %table#applications{:align => 'center'}
     %thead
@@ -27,7 +28,8 @@
   %br
   = button_tag 'Accept Selected', name: "accept"
   = button_tag 'Reject Selected', name: "reject"
-%h1 Clients
+.container_graybox
+  %p Clients
 %table#clients{:align => 'center'}
   %thead
     %tr
@@ -41,7 +43,8 @@
         %td= client.email
         %td= client.info
 %br
-%h1 Sponsors
+.container_graybox
+  %p Sponsors
 %table#sponsors{:align => "center"}
   %thead
     %tr

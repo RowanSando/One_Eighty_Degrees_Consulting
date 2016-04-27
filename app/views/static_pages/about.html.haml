@@ -1,54 +1,102 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
-    %title One Eighty Degrees Consulting
-    = csrf_meta_tags
+    %meta{:charset => "utf-8"}
+      %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+          %meta{:content => "", :name => "description"}
+            %meta{:content => "", :name => "author"}
+              %title Round About - Start Bootstrap Template
+              / Bootstrap Core CSS
+              %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}
+                / Custom CSS
+                %link{:href => "css/round-about.css", :rel => "stylesheet"}
+                  / HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+                  / WARNING: Respond.js doesn't work if you view the page via file://
+                  /[if lt IE 9]
+                    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   %body
-    %h1 About
-    .container_about
-      .sidebyside
-        %div
-          %img.aboutphotoleft{:src => "http://animaliaz-life.com/data_images/dog/dog4.jpg"}
-        %div.textboxright
-          %div.title President
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-    %hr
-    .container_about
-      .sidebyside
-        %div.textboxleft
-          %div.title Vice President
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-        %div
-          %img.aboutphotoright{:src => "http://dreamatico.com/data_images/dog/dog-2.jpg"}
-    %hr
-    .container_about
-      .sidebyside
-        %div
-          %img.aboutphotoleft{:src => "http://www.funchap.com/wp-content/uploads/2014/05/help-dog-picture.jpg"}
-        %div.textboxright
-          %div.title Treasurer
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-    %hr
-    .container_about
-      .sidebyside
-        %div.textboxleft
-          %div.title Secretary
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-        %div
-          %img.aboutphotoright{:src => "http://www.aspca.org/sites/default/files/dog-care_dog-bite-prevention_main-image.jpg"}  
-    %hr
-    .container_about
-      .sidebyside
-        %div
-          %img.aboutphotoleft{:src => "http://stanfordflipside.com/images/3.jpg"}
-        %div.textboxright
-          %div.title Member #1
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-    %hr
-    .container_about
-      .sidebyside
-        %div.textboxleft
-          %div.title Member #2
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-        %div
-          %img.aboutphotoright{:src => "http://i.huffpost.com/gen/3754046/original.jpg"}  
+    .container_graybox
+      %p About Us
+    .container
+      / Team Members Row
+      .row
+        .col-lg-12
+          %h2.page-header Our Team
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+        .col-lg-4.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+            %h3
+              John Smith
+              %small Job Title
+            %p What does this team member to? Keep it short! This is also a great spot for social links!
+      %hr
+    %script{:src => "js/jquery.js"}
+    / Bootstrap Core JavaScript
+    %script{:src => "js/bootstrap.min.js"}

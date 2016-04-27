@@ -1,17 +1,82 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
-    %title One Eighty Degrees Consulting
-    = csrf_meta_tags
+    %meta{:charset => "utf-8"}
+      %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+          %meta{:content => "", :name => "description"}
+            %meta{:content => "", :name => "author"}
+              %title 180 Degrees - Teams
+              / Bootstrap Core CSS
+              %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}
+                / Custom CSS
+                %link{:href => "css/1-col-portfolio.css", :rel => "stylesheet"}
+                  / HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+                  / WARNING: Respond.js doesn't work if you view the page via file://
+                  /[if lt IE 9]
+                    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   %body
-    %h1 Teams
-    .container_team
-      .team_header Teach for America
-      %div.team_textbox At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    / Page Content
+    .container_graybox
+      %p Current and Past Projects
+    .container
+      %br
+      / Project One
+      .row
+        .col-md-3
+          %a{:href => "#"}
+            %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}
+        .col-md-9
+          %h3 Teach for America
+          %h4 Subheading
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.
+      / /.row
       %hr
-      .team_header Meals on Wheels
-      %div.team_textbox At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-      %hr
-      .team_header Civil Corps
-      %div.team_textbox At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-      
+        / Project Two
+        .row
+          .col-md-3
+            %a{:href => "#"}
+              %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}
+          .col-md-9
+            %h3 Civil Corps
+            %h4 Subheading
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.
+        / /.row
+        %hr
+          / Project Three
+          .row
+            .col-md-3
+              %a{:href => "#"}
+                %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}
+            .col-md-9
+              %h3 Meals on Wheels
+              %h4 Subheading
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!
+          / /.row
+          %hr
+            / Project Four
+            .row
+              .col-md-3
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}
+              .col-md-9
+                %h3 Project Four
+                %h4 Subheading
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?
+            / /.row
+            %hr
+              / Project Five
+              .row
+                .col-md-3
+                  %a{:href => "#"}
+                    %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}
+                .col-md-9
+                  %h3 Project Five
+                  %h4 Subheading
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.
+    / /.container
+    / jQuery
+    %script{:src => "js/jquery.js"}
+    / Bootstrap Core JavaScript
+    %script{:src => "js/bootstrap.min.js"}

@@ -1,43 +1,45 @@
 !!!
 %html
   %head
+    %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css", :rel => "stylesheet"}/
     %title 180 DC at Berkeley
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
-    %header
-      .nav
-        %ul{:style => "float: left;"}
-          %img 
-          = link_to image_tag('logo.png'), '/'
-        %ul{:style => "float: right;"}
-          %li.home
-            %a
-            = link_to "Home", home_path, class: active(home_path)
-          %li.about
-            %a
-            = link_to "About", about_path, class: active(about_path)
-          %li.teams
-            %a
-            = link_to "Teams", team_path, class: active(team_path)
-          %li.applications
-            %a
-            = link_to "Apply", applications_path, class: active(applications_path)
-          - if user_signed_in? && current_user.member_type == 'admin'
-            %li.admin
-              %a
-              = link_to "Admin", admin_path, class: active(admin_path)
-          - if user_signed_in?
-            %li.logout
-              = link_to 'Logout', destroy_user_session_path, :method => 'delete'
-            .h4
-            = 'signed in as ' + current_user.email
-          - else
-            // %li.signup
-            //   = link_to 'sign up', new_user_registration_path, class: active(new_user_registration_path)
-            %li.login  
-              = link_to 'Login', new_user_session_path, class: active(new_user_session_path)
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "/home"}
+            %img{:alt => "180 DC", :src => "logo.png"}
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+          %ul.nav.navbar-nav.navbar-right
+            %li.home
+              %a{:href => "/home"} Home
+            %li.about
+              %a{:href => "/about"} About
+            %li.teams
+              %a{:href => "/team"} Teams
+            %li.applications
+              %a{:href => "/applications"} Apps
+            - if user_signed_in? && current_user.member_type == 'admin'
+              %li.admin
+                = link_to "Admin", admin_path, class: active(admin_path)
+            - if user_signed_in?
+              %li.logout
+                = link_to 'Logout', destroy_user_session_path, :method => 'delete'
+              .container_loggedin
+                %p
+                = 'signed in as ' + current_user.email
+            - else
+              %li.login  
+                = link_to 'Login', new_user_session_path
     %br
     - if flash[:notice]
       #notice.message= flash[:notice]
@@ -47,3 +49,12 @@
       #warning.message= flash[:alert]
     %br
     = yield
+    %footer
+      .container
+        .row
+          .col-lg-12
+            %p 180 DC - Berkeley
+    / jQuery
+    %script{:src => "js/jquery.js"}
+    / Bootstrap Core JavaScript
+    %script{:src => "js/bootstrap.min.js"}

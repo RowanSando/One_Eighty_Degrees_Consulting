@@ -1,16 +1,16 @@
 %body
-  %h1 Edit Users
+  .container_graybox
+    %p Edit Users
   =form_tag users_update_or_destroy_path, method: "post" do
     %table#users{:align => "center"}
       %thead
         %tr
-          %th Name
-          %th Email
-          %th Member Type
-          %th Sign in Count
-          %th Last Sign in At
-          // %th Application
-          %th=check_box_tag "Check All"
+          %th.center Name
+          %th.center Email
+          %th.center Member Type
+          %th.center Sign in Count
+          %th.center Last Sign in At
+          %th.center=check_box_tag "Check All"
       %tbody
         - User.all.each do |user|
           %tr
