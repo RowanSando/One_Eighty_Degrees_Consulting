@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20160426050838) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "mercury_images", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sponsors", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
