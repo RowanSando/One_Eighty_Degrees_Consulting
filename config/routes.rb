@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+    namespace :mercury do
+      resources :images
+    end
+    namespace :mercury do
+      resources :images
+    end
+  mount Mercury::Engine => '/'
   root 'static_pages#home'
   devise_for :users
   devise_scope :user do  

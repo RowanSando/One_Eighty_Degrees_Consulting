@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'    # Ruby version you're running
+ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 gem 'table_print'
@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 
-# gem 'mercury-rails'
+gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -83,3 +83,4 @@ gem 'haml-rails'
 gem 'mail_form', '~> 1.5.1.rc'
 gem 'simple_form', '~> 3.2.1.rc'
 # }
+gem 'paperclip'

@@ -1,4 +1,4 @@
-class AddEssayToStudentapplication < ActiveRecord::Migration
+class AddEssayToStudentapplications < ActiveRecord::Migration
   def change
     add_column :studentapplications, :essay, :string
   end

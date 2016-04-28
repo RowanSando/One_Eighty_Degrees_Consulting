@@ -3,5 +3,5 @@ class Studentapplication < ActiveRecord::Base
     validates :major, presence: true
     validates :graduation, presence: true
     validates :info, presence: true
-    mount_uploader :file, AvatarUploader
+    mount_uploader :resume, AvatarUploader
 end
