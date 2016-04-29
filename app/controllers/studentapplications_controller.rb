@@ -2,7 +2,7 @@ class StudentapplicationsController < ApplicationController
   before_filter :ensure_loggedin!
   
   def studentapplication_params
-    params.require(:studentapplication).permit(:major, :graduation, :info, :essay, :file, :user_id, :status)
+    params.require(:studentapplication).permit(:major, :graduation, :info, :essay, :resume, :user_id, :status)
   end
   
   def user_params
@@ -23,16 +23,17 @@ class StudentapplicationsController < ApplicationController
 
   def edit
     @studentapplication = Studentapplication.find(params[:id])
-    if DateTime.now > DateTime.new(2016, 5, 9, 23, 59, 59)
-      flash[:notice] = "Sorry. The application cannot be edited after the deadline."
-      redirect_to studentapplication_path(@studentapplication)
+    deadline = Deadline.last
+    if not deadline.nil? and DateTime.now > deadline.date  
+        flash[:notice] = "Sorry. The application cannot be edited after the deadline."
+        redirect_to studentapplication_path(@studentapplication)
     end
   end
   
   def update
     @studentapplication = Studentapplication.find params[:id]
-    if not studentapplication_params[:file].nil?
-      @studentapplication.remove_file!
+    if not studentapplication_params[:resume].nil?
+      @studentapplication.remove_resume!
       @studentapplication.save
     end
     begin    
@@ -47,11 +48,17 @@ class StudentapplicationsController < ApplicationController
   end
   
   def new
+    deadline = Deadline.last
     current_application = current_user.studentapplication
     if current_application.nil?
       @studentapplication = Studentapplication.new
     else
       redirect_to studentapplication_path(current_application)
+      return
+    end
+    if not deadline.nil? and DateTime.now > deadline.date  
+      flash[:notice] = "Sorry. The deadline #{deadline.date.strftime("%m/%d/%Y-%I:%M%p")} of this application period has passed."
+      redirect_to applications_path
     end
   end
   

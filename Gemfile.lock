@@ -1,10 +1,10 @@
 GIT
-  remote: git://github.com/jejacks0n/mercury.git
-  revision: 1cc637b0bccea19085f824d2881c6513ed5ee8ae
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 123389ea325b1521a3ac68cc0b1bac627a12f34b
   specs:
-    mercury-rails (0.9.0)
-      coffee-rails (>= 3.2.2)
-      railties (>= 3.0)
+    ckeditor (4.1.6)
+      cocaine
+      orm_adapter (~> 0.5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -390,6 +390,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   carrierwave
+  ckeditor!
   coffee-rails (~> 4.1.0)
   coveralls
   cucumber-rails
@@ -402,7 +403,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mail_form (~> 1.5.1.rc)
-  mercury-rails!
   metric_fu
   paperclip
   pg (~> 0.15)

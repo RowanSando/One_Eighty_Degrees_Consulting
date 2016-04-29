@@ -26,12 +26,21 @@ body {
 }
 // General CSS:
 // gray box title on each page
+.container {
+  padding-top: 50px;
+}
+
+header {
+  padding-top: -50px;
+}
+
 .container_graybox {
   height: 125px;
   position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0px;
   top: 0px;
   bottom: 0px;
   background: gray;
@@ -269,7 +278,8 @@ body {
 }
 /* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
 .carousel {
-    height: 50%;
+  margin-top: 0px;
+    height: 60%;
 }
 
 .item,
@@ -293,6 +303,16 @@ body {
 footer {
     margin: 0;
     padding-top: 10px;
+}
+
+/*flash notice styling*/
+
+.message {
+  margin-top: 30px;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: #bef0ff;
+
 }
 
 /*

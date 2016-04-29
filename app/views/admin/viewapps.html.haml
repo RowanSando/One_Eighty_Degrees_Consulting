@@ -1,5 +1,5 @@
 .container_graybox
-  %p Students
+  %p Applications
 =form_tag studentapplications_change_status_path, method: "post" do
   %table#applications{:align => 'center'}
     %thead
@@ -9,6 +9,7 @@
         %th Major
         %th Graduation Year
         %th Info
+        %th Resume
         %th Essay
         %th Status
         %th=check_box_tag 'Check All'
@@ -20,6 +21,8 @@
           %td.major=studentapplication.major
           %td.grad=studentapplication.graduation
           %td.info=studentapplication.info
+          %td.resume
+            %a{:href => studentapplication.resume, :target => "_blank"}>#{studentapplication.resume_identifier}
           %td.essay=link_to "View Essays", "/admin/viewessays/#{studentapplication.id}", target: "_blank"
           %td.status=studentapplication.status
           %td.select=check_box_tag "select_user[]", studentapplication.id
@@ -28,33 +31,33 @@
   %br
   = button_tag 'Accept Selected', name: "accept"
   = button_tag 'Reject Selected', name: "reject"
-.container_graybox
-  %p Clients
-%table#clients{:align => 'center'}
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Comments
-  %tbody
-    - Client.all.each do |client|
-      %tr
-        %td= client.name 
-        %td= client.email
-        %td= client.info
-%br
-.container_graybox
-  %p Sponsors
-%table#sponsors{:align => "center"}
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Comments
-  %tbody
-    - Sponsor.all.each do |sponsor|
-      %tr
-        %td= sponsor.name 
-        %td= sponsor.email
-        %td= sponsor.info
-%br
+// .container_graybox
+//   %p Clients
+// %table#clients{:align => 'center'}
+//   %thead
+//     %tr
+//       %th Name
+//       %th Email
+//       %th Comments
+//   %tbody
+//     - Client.all.each do |client|
+//       %tr
+//         %td= client.name 
+//         %td= client.email
+//         %td= client.info
+// %br
+// .container_graybox
+//   %p Sponsors
+// %table#sponsors{:align => "center"}
+//   %thead
+//     %tr
+//       %th Name
+//       %th Email
+//       %th Comments
+//   %tbody
+//     - Sponsor.all.each do |sponsor|
+//       %tr
+//         %td= sponsor.name 
+//         %td= sponsor.email
+//         %td= sponsor.info
+// %br

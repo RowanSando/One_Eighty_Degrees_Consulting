@@ -1,0 +1,21 @@
+.container
+  %form
+  %center
+    %h1 Set Deadline
+    %p
+    %p
+    %p
+    %p
+    = form_tag(admin_setdeadline_path, :method => :post) do
+      %br
+      %br
+      = label :date, :date
+      = datetime_local_field :date, 'date'
+      %br
+      %br
+      .form-actions
+        = submit_tag 'Edit'
+      %br
+      %br
+      %br
+      %br

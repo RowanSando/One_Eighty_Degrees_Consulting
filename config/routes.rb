@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-    namespace :mercury do
-      resources :images
-    end
-    namespace :mercury do
-      resources :images
-    end
-  mount Mercury::Engine => '/'
+  mount Ckeditor::Engine => '/ckeditor'
   root 'static_pages#home'
   devise_for :users
   devise_scope :user do  
@@ -24,8 +18,10 @@ Rails.application.routes.draw do
   get '/admin/viewapps' => 'admin#viewapps'
   get '/admin/editusers' => 'admin#editusers'
   get '/admin/viewessays/:id' => 'admin#viewessays'
+  get '/admin/newdeadline' => 'admin#new_deadline'
   post '/studentapplications/change_status' => 'studentapplications#change_status'
   post '/users/update_or_destroy' => 'users#update_or_destroy'
+  post '/admin/setdeadline' => 'admin#set_deadline'
   # admin test
   # get '/admin/' => 'admin#admin_page'
   

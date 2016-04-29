@@ -1,48 +1,45 @@
-%header#myCarousel.carousel.slide
-  / Indicators
-  %ol.carousel-indicators
-    // %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-    // %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-    // %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
-  / Wrapper for Slides
-  .carousel-inner
-    .item.active
-      / Set the first background image using inline CSS below.
-      .fill{:style => "background-image:url('https://upload.wikimedia.org/wikipedia/commons/c/cd/SanFrancisco_from_TwinPeaks_dusk_MC.jpg"}
-      .carousel-caption
-        %h2
-  / Controls
-  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
-    %span.icon-prev
-  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
-    %span.icon-next
-/ Page Content
-.container_graybox
-  %p 180 Degrees at Berkeley
-.container-fluid
-  .row
-    .col-lg-2
-    .col-lg-4
-      %h2 Mission Statement
-      %p
-        180 Degrees Consulting - Berkeley is committed to providing the highest quality pro-bono consulting services to non-profits and socially-minded organizations. We are unique because we recruit the most talented student consultants and provide the most cutting edge tools to help organizations reach their goals.
-        Founded in 2016, 180 Degrees Consulting - Berkeley has since worked with 3 non-profit and social-minded organizations working in causes ranging from urban homelessness & hunger to micro-finance in emerging economies. Still in our early years, we are committed to growing and improving our organization while maintaining the integrity of our people and work.
-    .col-lg-4
-      %h2 Follow Us
-      %p
-        %a.btn.btn-social-icon.btn-facebook{:href => "https://www.facebook.com/180-Degrees-Consulting-UC-Berkeley-1695323254014573/?fref=ts"}
-          %span.fa.fa-facebook
-        %a.btn.btn-social-icon.btn-twitter{:href => "/home"}
-          %span.fa.fa-twitter
-        %a.btn.btn-social-icon.btn-linkedin{:href => "/home"}
-          %span.fa.fa-linkedin
-    .col-lg-2
-  %hr
+%body
+  %header#myCarousel.carousel.slide
+    / Indicators
+    %ol.carousel-indicators
+      // %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+      // %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      // %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+    / Wrapper for Slides
+    .carousel-inner
+      .item.active
+        / Set the first background image using inline CSS below.
+        .fill{:style => "background-image:url('https://upload.wikimedia.org/wikipedia/commons/c/cd/SanFrancisco_from_TwinPeaks_dusk_MC.jpg"}
+        .carousel-caption
+          %h2
+    / Controls
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+      %span.icon-prev
+    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+      %span.icon-next
+  / Page Content
+  .container_graybox
+    %p 180 Degrees at Berkeley
+  .container-fluid
+    .row
+      .col-lg-2
+      .col-lg-4
+        %h2 Mission Statement
+        %p
+          180 Degrees Consulting - Berkeley is committed to providing the highest quality pro-bono consulting services to non-profits and socially-minded organizations. We are unique because we recruit the most talented student consultants and provide the most cutting edge tools to help organizations reach their goals.
+          Founded in 2016, 180 Degrees Consulting - Berkeley has since worked with 3 non-profit and social-minded organizations working in causes ranging from urban homelessness & hunger to micro-finance in emerging economies. Still in our early years, we are committed to growing and improving our organization while maintaining the integrity of our people and work.
+      .col-lg-4
+        %h2 Follow Us
+        %p
+          %a.btn.btn-social-icon.btn-facebook{:href => "https://www.facebook.com/180-Degrees-Consulting-UC-Berkeley-1695323254014573/?fref=ts"}
+            %span.fa.fa-facebook
+          %a.btn.btn-social-icon.btn-twitter{:href => "/home"}
+            %span.fa.fa-twitter
+          %a.btn.btn-social-icon.btn-linkedin{:href => "/home"}
+            %span.fa.fa-linkedin
+      .col-lg-2
+    %hr
 / /.container
-/ jQuery
-%script{:src => "js/jquery.js"}
-/ Bootstrap Core JavaScript
-%script{:src => "js/bootstrap.min.js"}
 / Script to Activate the Carousel
 :javascript
   $('.carousel').carousel({

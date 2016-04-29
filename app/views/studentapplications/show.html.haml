@@ -26,12 +26,13 @@
     = @studentapplication.essay
   %li
     Resume:
-    %a{:href => @studentapplication.file}>#{@studentapplication.file_identifier}
+    %a{:href => @studentapplication.resume}>#{@studentapplication.resume_identifier}
 %p
 = link_to 'Edit', edit_studentapplication_path(@studentapplication)
 
 %p
-***Application Deadline****
-%br Thursday May 12th - 11:59pm
+- if not Deadline.last.nil?
+  ***Application Deadline****
+  %br #{Deadline.last.date.strftime("%m/%d/%Y")} #{Deadline.last.date.strftime("at %I:%M%p")} 
 %p
 %p
