@@ -4,13 +4,14 @@
     %meta{:charset => "utf-8"}
       %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
         %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+          = javascript_include_tag Ckeditor.cdn_url
           %meta{:content => "", :name => "description"}
             %meta{:content => "", :name => "author"}
-              %title Round About - Start Bootstrap Template
+              %title About Us
 
               <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
               <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-              
+              <script type='text/javascript' charset='UTF-8'>$(document).ready(function(){$('form[data-remote]').bind('ajax:before', function(){for (instance in CKEDITOR.instances){CKEDITOR.instances[instance].updateElement();}});});</script>
   %body
     .container_graybox
       %p About Us
@@ -19,76 +20,46 @@
         .col-lg-12
           %h2.page-header Our Team
         .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+          %img.img-circle.img-responsive.img-center.img-fix{:alt => "", :src => "execs/tony.jpg"}
             %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
+              Tony Kim
+              %small President
+            %p President of 180 Degrees at Berkeley
         .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+          %img.img-circle.img-responsive.img-center.img-fix{:alt => "", :src => "execs/alok.jpg"}
             %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
+              Alok Narahari
+              %small IVP
+            %p Internal Vice President of 180 Degrees at Berkeley
         .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+          %img.img-circle.img-responsive.img-center.img-fix{:alt => "", :src => "http://placehold.it/200x200"}
             %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
+              Federico Marchese
+              %small EVP
+            %p External Vice President of 180 Degrees at Berkeley
         .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+          %img.img-circle.img-responsive.img-center.img-fix{:alt => "", :src => "execs/josh.jpg"}
             %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
+              Josh Min
+              %small PM Coordinator
+            %p Project Manager coordinator at 180 Degrees at Berkeley
         .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+          %img.img-circle.img-responsive.img-center.img-fix{:alt => "", :src => "execs/ella.jpg"}
             %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
+              Ella Gao
+              %small Project Manager
+            %p Project Manager
         .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+          %img.img-circle.img-responsive.img-center.img-fix{:alt => "", :src => "execs/clara.jpg"}
             %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
-        .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
+              Clara Ki
+              %small Project Manager
+            %p Project Manager
+        .col-lg-12.col-sm-6.text-center
+          %img.img-circle.img-responsive.img-center.img-fix{:alt => "", :src => "execs/hans.jpg"}
             %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
-        .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
-            %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
-        .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
-            %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
-        .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
-            %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
-        .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
-            %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
-        .col-lg-4.col-sm-6.text-center
-          %img.img-circle.img-responsive.img-center{:alt => "", :src => "http://placehold.it/200x200"}
-            %h3
-              John Smith
-              %small Job Title
-            %p What does this team member to? Keep it short! This is also a great spot for social links!
+              Hans Husmann
+              %small Project Manager
+            %p Project Manager
       %hr
 

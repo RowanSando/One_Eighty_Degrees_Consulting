@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429220743) do
+ActiveRecord::Schema.define(version: 20160430012930) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -56,8 +56,20 @@ ActiveRecord::Schema.define(version: 20160429220743) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "studentapplications" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "studentapplications", force: :cascade do |t|
+    t.string   "major"
+    t.string   "graduation"
+    t.string   "info"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "user_id"
+    t.string   "status"
+    t.string   "message"
+    t.string   "resume"
+    t.string   "essay",      default: []
+  end
+
+  add_index "studentapplications", ["user_id"], name: "index_studentapplications_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"

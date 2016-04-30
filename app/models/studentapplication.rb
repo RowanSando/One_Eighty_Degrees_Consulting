@@ -4,4 +4,5 @@ class Studentapplication < ActiveRecord::Base
     validates :graduation, presence: true
     validates :info, presence: true
     mount_uploader :resume, AvatarUploader
+    serialize :essay
 end

@@ -22,13 +22,17 @@
     Info:
     = @studentapplication.info
   %li
-    Essay:
-    = @studentapplication.essay
+    %h4 Essays
+    - Prompt.all.each_with_index do |essay, index|
+      %strong=essay.text
+      %br
+      = @studentapplication.essay[index]
+      %br
   %li
     Resume:
     %a{:href => @studentapplication.resume}>#{@studentapplication.resume_identifier}
-%p
-= link_to 'Edit', edit_studentapplication_path(@studentapplication)
+    %br
+  = link_to 'Edit', edit_studentapplication_path(@studentapplication)
 
 %p
 - if not Deadline.last.nil?

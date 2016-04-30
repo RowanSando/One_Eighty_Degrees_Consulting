@@ -2,14 +2,14 @@
   %header#myCarousel.carousel.slide
     / Indicators
     %ol.carousel-indicators
-      // %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-      // %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-      // %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+      %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
     / Wrapper for Slides
     .carousel-inner
       .item.active
         / Set the first background image using inline CSS below.
-        .fill{:style => "background-image:url('https://upload.wikimedia.org/wikipedia/commons/c/cd/SanFrancisco_from_TwinPeaks_dusk_MC.jpg"}
+        .fill{:style => "background-image:url('sf.jpg"}
         .carousel-caption
           %h2
     / Controls

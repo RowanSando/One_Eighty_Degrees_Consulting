@@ -8,7 +8,7 @@ Feature: feature apply
     # Given I am not logged in
     Given the following users exist:
     | email                       | password    | member_type |
-    | user1@berkeley.edu          | 12345678         | appplicant  |
+    | user1@berkeley.edu          | 12345678    | appplicant  |
 
   # checking the route
   
@@ -44,7 +44,7 @@ Feature: feature apply
     Then I should see "Thank you for your message. We'll get back to you soon."
     
   #sad path:
-  Scenario: unsuccessful application
+  Scenario: fields missed
     Given I am on the new user session page
     When I fill in "Email" with "user1@berkeley.edu"
     And I fill in "Password" with "12345678"
@@ -52,6 +52,14 @@ Feature: feature apply
     And I am on the application for studentapplications page
     And I press "Submit"
     Then I should see "You are missing required fields"
+  
+  Scenario: deadline passed
+    Given the deadline is "2015-1-1-23-59"
+    And I fill in "Email" with "user1@berkeley.edu"
+    And I fill in "Password" with "12345678"
+    And I press "Log in"
+    And I am on the application for studentapplications page
+    And I should see "has passed"
     
   Scenario: the default pending status
     Given I am on the new user session page

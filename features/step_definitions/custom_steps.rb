@@ -78,6 +78,11 @@ When /^(?:|I )follow (.*) for (.*)$/ do |link, user|
   find(:xpath, "//tr[contains(.,#{user})]/td/a").click
 end
 
-Given /^the deadline is (.*)$/ do |deadline|
-  pending
+Given /^the deadline is "(.*)"$/ do |deadline|
+  Deadline.create("date" => Datetime.new(deadline.split('-')))
+end
+
+When /^(?:|I ) fill in date with "(.*)"$/ do |value|
+  value = Datetime.new(value.split('-'))
+  fill_in(field, :with => value)
 end

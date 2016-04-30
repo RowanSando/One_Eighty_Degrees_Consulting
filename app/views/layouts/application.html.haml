@@ -35,7 +35,7 @@
               %li.logout
                 = link_to 'Logout', destroy_user_session_path, :method => 'delete'
               .container_loggedin
-                %p
+                %p 
                 = 'signed in as ' + current_user.email
             - else
               %li.login  

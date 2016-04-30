@@ -22,9 +22,28 @@ class AdminController < ApplicationController
 			Deadline.last.destroy
 		end
 		deadline = Deadline.new(date_params)
+		if deadline.date.nil?
+			flash[:notice] = "Please select the date and time."
+			redirect_to admin_newdeadline_path
+			return
+		end
 		deadline.save!
 		flash[:notice] = "Deadline #{deadline.date.strftime("%m/%d/%Y-%I:%M%p")} was successfully set."
 		redirect_to admin_path
+	end
+	
+	def prompts
+	end
+	
+	def newprompt
+		Prompt.create(:text => params["text"])
+		redirect_to admin_prompts_path
+	end
+	
+	def deleteprompt
+		prompt = Prompt.find(params[:id])
+		prompt.delete
+		redirect_to admin_prompts_path
 	end
 	
 	private

@@ -1,0 +1,13 @@
+.container_graybox
+  %p Essay Prompts
+  
+%br  
+- Prompt.all.each do |essay|
+  %div
+    =content_tag :span, essay.text, :style => "font-weight:bold"
+    =button_to "Delete Prompt", "/admin/deleteprompt/#{essay.id}"
+  %br
+  
+=form_tag admin_newprompt_path, method: "post" do  
+  %input{:type=>"text", :name => "text", :required => true}
+  =button_tag "Add Essay Prompt"

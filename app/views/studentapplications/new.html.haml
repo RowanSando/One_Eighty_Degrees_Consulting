@@ -41,8 +41,11 @@
       = f.input :graduation, :required => true
       %h3 How did you hear about this club?
       = f.input :info, :required => true
-      %h3 Essay
-      = f.input :essay, :as => :text, :required => true, :input_html => {:cols => 50, :rows => 15}
+      // %h3 Essay
+      // = f.input :essay, :as => :text, :required => true, :input_html => {:cols => 50, :rows => 15}
+      - @prompts.each do |prompt|
+        %h3=prompt.text
+        %textarea{:type=>"text", :name => "essay[]", :required => true, :cols => 60, :rows => 10}
       %h3 Attatch Resume (* PDF only)
       = f.input :resume, :as => :file, :required => true
       = f.submit 'Submit'

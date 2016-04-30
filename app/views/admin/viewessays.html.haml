@@ -1,8 +1,11 @@
 %h1="#{@name} Essays"
 %b Question 1
 %br
-=@essay
+- Prompt.all.each_with_index do |prompt, index|
+    %br
+    %strong=prompt.text
+    %br=@essay[index]
 %br
 %br
 %br
-= button_to "Back to Applications", admin_viewapps_path, :method => "get"
+// = button_to "Back to Applications", admin_viewapps_path, :method => "get"

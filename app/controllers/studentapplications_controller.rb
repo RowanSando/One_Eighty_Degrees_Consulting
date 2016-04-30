@@ -23,23 +23,49 @@ class StudentapplicationsController < ApplicationController
 
   def edit
     @studentapplication = Studentapplication.find(params[:id])
+    @prompts = Prompt.all
+    @answers = @studentapplication.essay
+    @essays = Hash.new
+    @prompts.each_with_index do |prompt, index|
+      @essays[prompt.text] = @answers[index]
+    end
     deadline = Deadline.last
-    if not deadline.nil? and DateTime.now > deadline.date  
+    if not deadline.nil? and not deadline.date.nil? and DateTime.now > deadline.date  
         flash[:notice] = "Sorry. The application cannot be edited after the deadline."
         redirect_to studentapplication_path(@studentapplication)
     end
   end
   
+  def new
+    deadline = Deadline.last
+    current_application = current_user.studentapplication
+    @prompts = Prompt.all
+    if current_application.nil?
+      @studentapplication = Studentapplication.new
+    else
+      redirect_to studentapplication_path(current_application)
+      return
+    end
+    if not deadline.nil? and not deadline.date.nil? and DateTime.now > deadline.date  
+      flash[:notice] = "Sorry. The deadline #{deadline.date.strftime("%m/%d/%Y-%I:%M%p")} of this application period has passed."
+      redirect_to applications_path
+      return
+    end
+  end
+  
   def update
+    updated_sudent_param = studentapplication_params
+    updated_sudent_param[:essay] = params[:essay]
     @studentapplication = Studentapplication.find params[:id]
+    # redirect_to edit_studentapplication_path(@studentapplication)
     if not studentapplication_params[:resume].nil?
       @studentapplication.remove_resume!
       @studentapplication.save
     end
     begin    
-      @studentapplication.update_attributes!(studentapplication_params)
+      @studentapplication.update_attributes!(updated_sudent_param)
       @studentapplication.user.update_attributes!(user_params[:user])
-      flash[:notice] = "Your application was successfully updated."
+      # flash[:notice] = "Your application was successfully updated."
       redirect_to studentapplication_path(@studentapplication)
     rescue ActiveRecord::RecordInvalid
       flash[:notice] = "Sorry. Your resume should be a PDF."
@@ -47,23 +73,10 @@ class StudentapplicationsController < ApplicationController
     end
   end
   
-  def new
-    deadline = Deadline.last
-    current_application = current_user.studentapplication
-    if current_application.nil?
-      @studentapplication = Studentapplication.new
-    else
-      redirect_to studentapplication_path(current_application)
-      return
-    end
-    if not deadline.nil? and DateTime.now > deadline.date  
-      flash[:notice] = "Sorry. The deadline #{deadline.date.strftime("%m/%d/%Y-%I:%M%p")} of this application period has passed."
-      redirect_to applications_path
-    end
-  end
-  
   def create
-    @studentapplication = Studentapplication.new(studentapplication_params)
+    updated_sudent_param = studentapplication_params
+    updated_sudent_param[:essay] = params[:essay]
+    @studentapplication = Studentapplication.new(updated_sudent_param)
     if @studentapplication.valid?
       @studentapplication.status = "Pending"
       @studentapplication.user_id = current_user.id

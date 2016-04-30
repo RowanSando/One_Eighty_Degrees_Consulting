@@ -27,7 +27,7 @@ body {
 // General CSS:
 // gray box title on each page
 .container {
-  padding-top: 50px;
+  padding-top: 0px;
 }
 
 header {
@@ -61,8 +61,9 @@ header {
 .container_loggedin {
   padding-top: 70px;
 }
+
 .container_loggedin p {
-  position: absolute;
+    position: absolute;
 }
 
 
@@ -313,6 +314,11 @@ footer {
   padding: 5px;
   background-color: #bef0ff;
 
+}
+
+.img-fix {
+  height: 200px;
+  width: 200px;
 }
 
 /*

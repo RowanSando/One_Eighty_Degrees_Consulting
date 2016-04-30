@@ -19,9 +19,12 @@ Rails.application.routes.draw do
   get '/admin/editusers' => 'admin#editusers'
   get '/admin/viewessays/:id' => 'admin#viewessays'
   get '/admin/newdeadline' => 'admin#new_deadline'
+  get '/admin/prompts' => 'admin#prompts'
   post '/studentapplications/change_status' => 'studentapplications#change_status'
   post '/users/update_or_destroy' => 'users#update_or_destroy'
   post '/admin/setdeadline' => 'admin#set_deadline'
+  post '/admin/newprompt' => 'admin#newprompt'
+  post '/admin/deleteprompt/:id' => 'admin#deleteprompt'
   # admin test
   # get '/admin/' => 'admin#admin_page'
   

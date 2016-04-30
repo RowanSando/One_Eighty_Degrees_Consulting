@@ -4,15 +4,15 @@
   %table#applications{:align => 'center'}
     %thead
       %tr
-        %th Name
-        %th Email
-        %th Major
-        %th Graduation Year
-        %th Info
-        %th Resume
-        %th Essay
-        %th Status
-        %th=check_box_tag 'Check All'
+        %th{:style => 'text-align: center'} Name
+        %th{:style => 'text-align: center'} Email
+        %th{:style => 'text-align: center'} Major
+        %th{:style => 'text-align: center'} Graduation Year
+        %th{:style => 'text-align: center'} Info
+        %th{:style => 'text-align: center'} Resume
+        %th{:style => 'text-align: center'} Essay
+        %th{:style => 'text-align: center'} Status
+        %th{:style => 'text-align: center'}=check_box_tag 'Check All'
     %tbody
       - Studentapplication.all.each do |studentapplication|
         %tr

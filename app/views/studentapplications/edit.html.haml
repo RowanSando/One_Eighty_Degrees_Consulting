@@ -15,10 +15,18 @@
   = f.input :graduation, :required => true
   %br
   = f.input :info, :required => true
+  - @essays.each do |question, answer|
+    %br
+    %div{:class => "input text required studentapplication_essay"}
+      =content_tag(:label, content_tag(:abbr, '*', :title => 'required') + " #{question}", :class => "text required", :for => question)
+      %br
+      // = f.input :essay, :as => :text, :required => true, :input_html => {:cols => 50, :rows => 10}
+      %textarea{:type=>"text", :id => question, :name => "essay[]", :required => true, :cols => 60, :rows => 10}
+        =answer
   %br
-  = f.input :essay, :as => :text, :required => true, :input_html => {:cols => 50, :rows => 15}
-  %h5 Update Resume (* PDF only) <a href = #{@studentapplication.resume}>#{@studentapplication.resume_identifier}</a>
-  = f.input :resume, :as => :file
+  
+  %strong Resume: <a href = #{@studentapplication.resume}>#{@studentapplication.resume_identifier}</a>
+  = f.input :resume, :as => :file, :input_html => {:style => "margin-left:auto;margin-right:auto"}
   %br
   = f.submit 'Update Application'
   %br
