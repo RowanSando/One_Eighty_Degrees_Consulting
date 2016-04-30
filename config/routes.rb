@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
   root 'static_pages#home'
   devise_for :users
   devise_scope :user do  

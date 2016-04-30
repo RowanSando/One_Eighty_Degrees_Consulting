@@ -35,6 +35,9 @@
     %p
     = simple_form_for @studentapplication, url: {action: "create"}, html: {class: "nifty_form"} do |f|
       %h2 Candidate Info
+      %h3 What is your Name?
+      = f.simple_fields_for :user, current_user do |user|
+        = user.input :name, :required => true
       %h3 What is your Major?
       = f.input :major, :required => true
       %h3 When do you graduate?

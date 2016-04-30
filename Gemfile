@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 
-gem 'ckeditor', github: 'galetahub/ckeditor'
+# gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -39,7 +39,6 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 group :production do
   # use postgresql as the database in production
   gem 'pg', '~> 0.15'
-
 end
 
 

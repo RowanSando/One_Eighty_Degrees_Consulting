@@ -39,7 +39,7 @@
                 = 'signed in as ' + current_user.email
             - else
               %li.login  
-                = link_to 'Login', new_user_session_path
+                = link_to 'Login', new_user_session_path, :id => "login"
     %br
     - if flash[:notice]
       #notice.message= flash[:notice]

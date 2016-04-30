@@ -53,3 +53,5 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
 end
+
+# Capybara.default_wait_time = 60

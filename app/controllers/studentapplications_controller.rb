@@ -54,18 +54,17 @@ class StudentapplicationsController < ApplicationController
   end
   
   def update
-    updated_sudent_param = studentapplication_params
-    updated_sudent_param[:essay] = params[:essay]
+    updated_student_param = studentapplication_params
+    updated_student_param[:essay] = params[:essay]
     @studentapplication = Studentapplication.find params[:id]
-    # redirect_to edit_studentapplication_path(@studentapplication)
     if not studentapplication_params[:resume].nil?
       @studentapplication.remove_resume!
       @studentapplication.save
     end
     begin    
-      @studentapplication.update_attributes!(updated_sudent_param)
+      @studentapplication.update_attributes!(updated_student_param)
       @studentapplication.user.update_attributes!(user_params[:user])
-      # flash[:notice] = "Your application was successfully updated."
+      flash[:notice] = "Your application was successfully updated."
       redirect_to studentapplication_path(@studentapplication)
     rescue ActiveRecord::RecordInvalid
       flash[:notice] = "Sorry. Your resume should be a PDF."
@@ -74,13 +73,16 @@ class StudentapplicationsController < ApplicationController
   end
   
   def create
-    updated_sudent_param = studentapplication_params
-    updated_sudent_param[:essay] = params[:essay]
-    @studentapplication = Studentapplication.new(updated_sudent_param)
+    updated_student_param = studentapplication_params
+    updated_student_param[:essay] = params[:essay]
+    @studentapplication = Studentapplication.new(updated_student_param)
     if @studentapplication.valid?
       @studentapplication.status = "Pending"
       @studentapplication.user_id = current_user.id
       current_user.studentapplication = @studentapplication
+      user = User.find(current_user.id)
+      user.name = user_params[:user][:name]
+      user.save
       @studentapplication.save
     else
       flash[:notice] = "You are missing required fields or choosing a non-PDF resume."

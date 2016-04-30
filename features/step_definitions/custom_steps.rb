@@ -86,3 +86,18 @@ When /^(?:|I ) fill in date with "(.*)"$/ do |value|
   value = Datetime.new(value.split('-'))
   fill_in(field, :with => value)
 end
+
+When /^(?:|I )follow "([^"]*)"$/ do |link|
+  # page.should have_css('.login')
+  if link == "Login"
+    find('#login', visible: false).click
+  elsif link == "About"
+    find('.about', visible: false).click
+  elsif link == "Teams"
+    find('.teams', visible: false).click
+  elsif link == "Apps"
+    find('.applications', visible: false).click
+  else
+    find('.home', visible: false).click
+  end
+end
