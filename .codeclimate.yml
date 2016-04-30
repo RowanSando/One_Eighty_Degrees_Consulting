@@ -6,3 +6,5 @@ languages:
 exclude_paths:
 - "coverage/*"
 - "features/step_definitions/web_steps.rb"
+- "public"
+- "app/assets"
