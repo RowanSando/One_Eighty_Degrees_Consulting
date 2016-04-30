@@ -82,8 +82,8 @@ When /^(?:|I )follow (.*) for (.*)$/ do |link, user|
 end
 
 Given /^the deadline is "(.*)"$/ do |deadline|
-  require 'date'
-  Deadline.create("date" => DateTime.new(deadline.split('-')))
+  # require 'date'
+  Deadline.create("date" => DateTime.new(deadline))
 end
 
 When /^(?:|I ) fill in date with "(.*)"$/ do |value|
