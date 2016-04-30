@@ -28,25 +28,5 @@ Feature: edit application form
     And I fill in "Password" with "password123"
     And I press "Log in"
     And I follow "Apps"
-    And I follow "Students"
+    And I follow "STUDENTS"
     Then I should see "Did I change my essay question?"
-    
-  Scenario: successfully edit info
-    Given I am on the home page
-    When I follow "Login"
-    And I fill in "Email" with "admin@berkeley.edu"
-    And I fill in "Password" with "password123"
-    And I press "Log in"
-    And I follow "Admin"
-    
-    And I follow "Edit Application Form"
-    And I fill in "Info" with "new info"
-    And I press "Update"
-    And I follow "Log Out"
-    And I follow "Login"
-    And I fill in "Email" with "applicant@berkeley.edu"
-    And I fill in "Password" with "password123"
-    And I press "Log in"
-    And I follow "Application"
-    And I follow "Studentapplication"
-    Then I should see "new info"
