@@ -35,6 +35,7 @@ Rails.application.configure do
   config.serve_static_files = true
   config.assets.compile = true
   config.assets.digest = true
+  config.serve_static_assets = true
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   # config.assets.digest = true

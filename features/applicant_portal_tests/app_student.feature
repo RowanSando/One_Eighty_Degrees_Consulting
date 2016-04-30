@@ -41,7 +41,7 @@ Feature: feature apply
     And I fill in "Info" with "info"
     # And I fill in "Essay" with "essay"
     And I press "Submit"
-    Then I should see "Thank you for your message. We'll get back to you soon."
+    Then I should see "Thank you for applying. We'll get back to you soon."
     
   #sad path:
   Scenario: fields missed
@@ -70,7 +70,7 @@ Feature: feature apply
     And I fill in "Major" with "EECS"
     And I fill in "Graduation" with "2016"
     And I fill in "Info" with "info"
-    And I fill in "Essay" with "essay"
+    # And I fill in "Essay" with "essay"
     And I press "Submit"
     And I follow "View My Application"
     Then I should see "We are presently in the process of reviewing."

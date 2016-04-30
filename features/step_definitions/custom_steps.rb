@@ -83,7 +83,7 @@ end
 
 Given /^the deadline is "(.*)"$/ do |deadline|
   # require 'date'
-  Deadline.create("date" => DateTime.new(deadline.split('-')))
+  Deadline.create("date" => DateTime.parse(deadline))
 end
 
 When /^(?:|I ) fill in date with "(.*)"$/ do |value|
