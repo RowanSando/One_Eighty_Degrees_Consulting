@@ -104,12 +104,11 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
     find('#teams', visible: false).click
   elsif link.downcase == "edit"
     find('#edit', visible: false).click
-  elsif link.downcase == "Forgot your password?"
+  elsif link.downcase == "forgot your password?"
     find('#forget', visible: false).click
   elsif link.downcase == "apps"
     find('#apps', visible: false).click
   elsif link.downcase == "admin"
-    # page.should have_content("what")
     find('#admin', visible: false).click
   else
     # find('#home', visible:false).click

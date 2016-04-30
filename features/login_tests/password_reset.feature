@@ -14,4 +14,4 @@ Feature: reset password
     Given I am on the home page
     When I follow "Login"
     And I follow "Forgot Your Password?"
-    Then I should see "We have sent applicant@berkeley.edu an email"
+    Then I should see "Forgot your password?"
