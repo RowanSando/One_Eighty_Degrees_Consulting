@@ -55,14 +55,14 @@ Feature: seeing applications
     And I should see "Bob Saget"
     
     # Check client
-    And I should see "Bobby Flay"
-    And I should see "cooking@cooking.com"
-    And I should see "we need $$$$"
+    # And I should see "Bobby Flay"
+    # And I should see "cooking@cooking.com"
+    # And I should see "we need $$$$"
     
-    # Check sponsor
-    And I should see "Guy Fieri"
-    And I should see "mmmbacon@bacon.com"
-    And I should see "heres all our $$$"
+    # # Check sponsor
+    # And I should see "Guy Fieri"
+    # And I should see "mmmbacon@bacon.com"
+    # And I should see "heres all our $$$"
     
   # Scenario: a non-admin cannot see all all application
   #   Given I am logged in as a non-admin
