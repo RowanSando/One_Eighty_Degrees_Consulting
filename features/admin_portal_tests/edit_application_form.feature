@@ -19,16 +19,16 @@ Feature: edit application form
     And I press "Log in"
     And I follow "Admin"
     
-    And I follow "Edit Application Form"
-    And I fill in "Essay Question" with "Did I change my essay question?"
-    And I press "Update"
-    And I follow "Log Out"
+    And I follow "Edit Essay Prompts"
+    And I fill in "text" with "Did I change my essay question?"
+    And I press "Add Essay Prompt"
+    And I follow "Logout"
     And I follow "Login"
     And I fill in "Email" with "applicant@berkeley.edu"
     And I fill in "Password" with "password123"
     And I press "Log in"
-    And I follow "Application"
-    And I follow "Studentapplication"
+    And I follow "Apps"
+    And I follow "Students"
     Then I should see "Did I change my essay question?"
     
   Scenario: successfully edit info

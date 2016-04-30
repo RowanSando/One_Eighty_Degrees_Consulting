@@ -1859,77 +1859,6 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/studentapplication.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/uploaders/avatar_uploader.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/client.rb": [
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/sponsor.rb": [
-        1,
-        null
-      ],
       "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/static_pages_controller.rb": [
         1,
         1,
@@ -1952,7 +1881,7 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -1963,7 +1892,7 @@
         null,
         null,
         1,
-        11,
+        9,
         null,
         null,
         1,
@@ -2040,8 +1969,8 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         1,
@@ -2052,7 +1981,7 @@
         null,
         1,
         1,
-        7,
+        5,
         0,
         0,
         null,
@@ -2062,8 +1991,16 @@
         0,
         null,
         null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/prompt.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/applications_controller.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1462000237
+    "timestamp": 1462001036
   }
 }

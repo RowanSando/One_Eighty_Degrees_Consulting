@@ -28,7 +28,8 @@ Feature: edit deadline
     And I press "Log in"
     And I follow "Admin"
     And I follow "Set Application Deadline"
-    And I fill in date with "2017-1-1-23-59"
+    And I fill in "date_date" with "2017-1-1-23-59"
+    And I press "Edit"
     Then I should see "successfully set"
     
     
