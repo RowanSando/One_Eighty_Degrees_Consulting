@@ -1,6 +1,7 @@
-#As an admin, I want to be able to click a link to see that individual's resume, 
-# so I can see their professional info.
+# # As an admin, I want to be able to click a link to see that individual's resume, 
+# # so I can see their professional info.
 
+# Not sure how to test this
 Feature: application resumes
     As an admin,
     I want to be able to click a link to see that individual's resume,

@@ -102,8 +102,8 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
     find('#logout', visible: false).click
   elsif link.downcase == "teams"
     find('#teams', visible: false).click
-  elsif link.downcase == "edit"
-    find('#edit', visible: false).click
+  # elsif link.downcase == "edit"
+  #   find('#edit', visible: false).click
   elsif link.downcase == "forgot your password?"
     find('#forget', visible: false).click
   elsif link.downcase == "apps"

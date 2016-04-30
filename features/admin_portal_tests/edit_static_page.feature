@@ -1,9 +1,11 @@
 # # As an admin, I want to be able to edit static page content (like the home page, about page, and team page), so I can change our website's content to match how our group changes.
 
-# Feature: edit application form
-#   As an admin, 
-#   I want to be able to edit static page content (like the home page, about page, and team page), 
-#   so I can change our website's content to match how our group changes.
+# Not Implemented
+Feature: edit application form
+  As an admin, 
+  I want to be able to edit static page content (like the home page, about page, and team page), 
+  so I can change our website's content to match how our group changes.
+
 #   Background:
 #     Given the following users exist:
 #     | email                       | password    | member_type |
