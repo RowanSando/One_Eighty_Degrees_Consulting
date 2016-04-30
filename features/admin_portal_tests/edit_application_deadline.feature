@@ -18,7 +18,7 @@ Feature: edit deadline
     And I press "Log in"
     And I follow "Admin"
     And I follow "Set Application Deadline"
-    Then the "date" field should contain "2016-01-01T23:59:00"
+    Then the "date_date" field should contain "2016-01-01T23:59:00"
     
   Scenario: change deadline
     Given I am on the home page

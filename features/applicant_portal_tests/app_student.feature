@@ -54,7 +54,8 @@ Feature: feature apply
     Then I should see "You are missing required fields"
   
   Scenario: deadline passed
-    Given the deadline is "2015-1-1-23-59"
+    Given I am on the new user session page
+    And the deadline is "2015-1-1-23-59"
     And I fill in "Email" with "user1@berkeley.edu"
     And I fill in "Password" with "12345678"
     And I press "Log in"
