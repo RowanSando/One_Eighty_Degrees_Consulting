@@ -8,7 +8,7 @@ Feature: feature apply
   # Happy path:
   Scenario: going to application page successfully
     Given I am on the home page
-    When I follow "Apply"
+    When I follow "Apps"
     And I follow "SPONSORS"
     Then I should be on the application for sponsors page
     

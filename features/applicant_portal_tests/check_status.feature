@@ -54,7 +54,7 @@ Feature: check and edit application
     And I fill in "Major" with "EECS"
     And I fill in "Graduation" with "2016"
     And I fill in "Info" with "info"
-    And I fill in "Essay" with "essay"
+    # And I fill in "Essay" with "essay"
     And I press "Update Application"
     Then I should see "EECS"
     And I should see "2016"

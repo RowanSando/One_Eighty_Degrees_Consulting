@@ -12,4 +12,4 @@ Feature: email confirm
     And I fill in "Password" with "password123"
     And I fill in "Confirm password" with "password123"
     And I press "Sign up"
-    Then I should see "We have sent blee@berkeley.edu a confirmation email"
+    Then I should see "A message with a confirmation link has been sent to your email address."

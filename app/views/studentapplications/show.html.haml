@@ -35,7 +35,7 @@
     Resume:
     %a{:href => @studentapplication.resume}>#{@studentapplication.resume_identifier}
     %br
-  = link_to 'Edit', edit_studentapplication_path(@studentapplication)
+  = link_to 'Edit', edit_studentapplication_path(@studentapplication), :id => "edit"
 
 %p
 - if not Deadline.last.nil?

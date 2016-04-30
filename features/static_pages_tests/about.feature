@@ -10,8 +10,8 @@ Feature: about page
   # seeing the header
   Scenario: seeing the about page successfully
     Given I am on the home page
-    When I follow "About"
-    Then I should see "About"
+    And I follow "About"
+    Then I should see "Our Team"
   
   # checking the route
   Scenario: going to about page successfully

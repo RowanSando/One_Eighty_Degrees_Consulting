@@ -1,7 +1,9 @@
 # Create Users Table for testing
 Given /the following users exist/ do |users_table|
   users_table.hashes.each do |user|
-    User.create(user)
+    u = User.create(user)
+    u.confirmed_at = Time.now
+    u.save
   end
 end
 
@@ -15,6 +17,7 @@ Given /the following applications exist/ do |applications_table|
     application.delete("email")
     new_hash = Hash["name", @name, "email", @email]
     user = FactoryGirl.create(:user, new_hash)
+    user.confirmed_at = Time.now
     application[:user_id] = user.id
     FactoryGirl.create(:studentapplication, application)
   end
@@ -58,7 +61,6 @@ Then /^(?:|I )should( not)? see the (.*) for (.*) as "([^"]*)"?/ do |should_not,
   if should_not
     find(:xpath, "//tr[contains(.,#{user})]/td[@class=#{field}]").text.should_not == value
   else
-    page.should have_content(user)
     find(:xpath, "//tr[contains(.,#{user})]/td[@class=#{field}]").text.should == value
   end
 end
@@ -80,7 +82,8 @@ When /^(?:|I )follow (.*) for (.*)$/ do |link, user|
 end
 
 Given /^the deadline is "(.*)"$/ do |deadline|
-  Deadline.create("date" => Datetime.new(deadline.split('-')))
+  require 'date'
+  Deadline.create("date" => DateTime.new(deadline.split('-')))
 end
 
 When /^(?:|I ) fill in date with "(.*)"$/ do |value|
@@ -89,18 +92,25 @@ When /^(?:|I ) fill in date with "(.*)"$/ do |value|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
+  
   # page.should have_css('.login')
-  if link == "Login"
+  if link.downcase == "login"
     find('#login', visible: false).click
-  elsif link == "About"
+  elsif link.downcase == "about"
     find('#about', visible: false).click
-  elsif link == "Logout"
+  elsif link.downcase == "logout"
     find('#logout', visible: false).click
-  elsif link == "Teams"
+  elsif link.downcase == "teams"
     find('#teams', visible: false).click
-  elsif link == "Apps"
-    find('#applications', visible: false).click
+  elsif link.downcase == "edit"
+    find('#edit', visible: false).click
+  elsif link.downcase == "apps"
+    find('#apps', visible: false).click
+  elsif link.downcase == "admin"
+    # page.should have_content("what")
+    find('#admin', visible: false).click
   else
-    find('#home', visible:false).click
+    # find('#home', visible:false).click
+    click_link(link)
   end
 end

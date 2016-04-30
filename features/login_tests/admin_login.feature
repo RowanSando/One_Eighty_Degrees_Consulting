@@ -24,7 +24,7 @@ Feature: login page
     And I fill in "Password" with "password123"
     And I press "Log in"
     Then I should see "Signed in successfully."
-    And I should see "Admin"
+    And I follow "Admin"
   
   # Sad path:
   Scenario: failed application

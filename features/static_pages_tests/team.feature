@@ -10,11 +10,11 @@ Feature: team page
   # seeing the header
   Scenario: seeing the team page successfully
     Given I am on the home page
-    And I follow "Team"
+    And I follow "Teams"
     Then I should see "Teams"
   
   # checking the route
   Scenario: going to team page successfully
     Given I am on the home page
-    And I follow "Team"
+    And I follow "Teams"
     Then I should be on the team page

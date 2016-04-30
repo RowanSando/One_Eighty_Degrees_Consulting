@@ -27,7 +27,7 @@
             %li.teams
               %a{:href => "/team", :id => "teams"} Teams
             %li.applications
-              %a{:href => "/applications", :id => "applications"} Apps
+              %a{:href => "/applications", :id => "apps"} Apps
             - if user_signed_in? && current_user.member_type == 'admin'
               %li.admin
                 = link_to "Admin", admin_path, class: active(admin_path), :id => "admin"
