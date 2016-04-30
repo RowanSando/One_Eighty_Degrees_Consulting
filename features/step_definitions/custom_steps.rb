@@ -78,7 +78,8 @@ Given /^the user "(.*?)" has the application "(.*?)"$/ do |user, app|
 end
 
 When /^(?:|I )follow (.*) for (.*)$/ do |link, user|
-  find(:xpath, "(//tr[contains(.,#{user})]/td/a)[1]").click
+  # find(:xpath, "//tr[contains(.,#{user})]/td/a)[1]").click
+  find(:xpath, "(//tr[contains(.,#{user})]/td/a)[1])", :text => 'View Essays').click
 end
 
 Given /^the deadline is "(.*)"$/ do |deadline|

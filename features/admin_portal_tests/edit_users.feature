@@ -35,7 +35,8 @@ Feature: edit users page
     And I fill in "Email" with "applicant@berkeley.edu"
     And I fill in "Password" with "password123"
     And I press "Log in"
-    And I should see "Admin"
+    And I follow "Admin"
+    # will only be able to follow if admin
 
 # removing admin access
   Scenario: as an admin, I should be able to remove a user as an admin
