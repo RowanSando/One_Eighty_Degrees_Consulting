@@ -13,5 +13,5 @@ Feature: reset password
   Scenario: successfully sending email
     Given I am on the home page
     When I follow "Login"
-    And I follow "Forgot Your Password?"
+    And I follow "Forgot your password?"
     Then I should see "Password Reset"
