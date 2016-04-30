@@ -71,6 +71,7 @@ Feature: application essays
     When I follow "View Essays" for "Bob Saget"
     Then I should see "Bob Saget Essays"
     
-    When I press "Back to Applications"
-    And I follow "View Essays" for "Jeremy Lin"
-    Then I should see "Jeremy Lin Essays"
+    # When I press "Back to Applications"
+    # And I follow "View Essays" for "Jeremy Lin"
+    # Then I should see "Jeremy Lin Essays"
+    # We took out "Back to Applications" Button since View Essays opens new tab
