@@ -58,6 +58,7 @@ Then /^(?:|I )should( not)? see the (.*) for (.*) as "([^"]*)"?/ do |should_not,
   if should_not
     find(:xpath, "//tr[contains(.,#{user})]/td[@class=#{field}]").text.should_not == value
   else
+    page.should have_content(user)
     find(:xpath, "//tr[contains(.,#{user})]/td[@class=#{field}]").text.should == value
   end
 end
@@ -92,12 +93,14 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   if link == "Login"
     find('#login', visible: false).click
   elsif link == "About"
-    find('.about', visible: false).click
+    find('#about', visible: false).click
+  elsif link == "Logout"
+    find('#logout', visible: false).click
   elsif link == "Teams"
-    find('.teams', visible: false).click
+    find('#teams', visible: false).click
   elsif link == "Apps"
-    find('.applications', visible: false).click
+    find('#applications', visible: false).click
   else
-    find('.home', visible: false).click
+    find('#home', visible:false).click
   end
 end

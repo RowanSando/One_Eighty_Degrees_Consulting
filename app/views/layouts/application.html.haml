@@ -21,19 +21,19 @@
           %ul.nav.navbar-nav
           %ul.nav.navbar-nav.navbar-right
             %li.home
-              %a{:href => "/home"} Home
+              %a{:href => "/home", :id => "home"} Home
             %li.about
-              %a{:href => "/about"} About
+              %a{:href => "/about", :id => "about"} About
             %li.teams
-              %a{:href => "/team"} Teams
+              %a{:href => "/team", :id => "teams"} Teams
             %li.applications
-              %a{:href => "/applications"} Apps
+              %a{:href => "/applications", :id => "applications"} Apps
             - if user_signed_in? && current_user.member_type == 'admin'
               %li.admin
-                = link_to "Admin", admin_path, class: active(admin_path)
+                = link_to "Admin", admin_path, class: active(admin_path), :id => "admin"
             - if user_signed_in?
               %li.logout
-                = link_to 'Logout', destroy_user_session_path, :method => 'delete'
+                = link_to 'Logout', destroy_user_session_path, :method => 'delete', :id => "logout"
               .container_loggedin
                 %p 
                 = 'signed in as ' + current_user.email

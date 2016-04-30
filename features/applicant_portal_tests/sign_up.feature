@@ -14,7 +14,7 @@ Feature: signup
     And I fill in "Password" with "password123"
     And I fill in "Confirm password" with "password123"
     And I press "Sign up"
-    Then I should see "Welcome! You have signed up successfully."
+    Then I should see "A message with a confirmation link has been sent to your email address."
 
   # sad paths
   Scenario: password not match
