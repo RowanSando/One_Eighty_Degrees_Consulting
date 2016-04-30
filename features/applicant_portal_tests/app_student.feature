@@ -14,7 +14,7 @@ Feature: feature apply
   
   Scenario: going to log in page successfully if not logged in
     Given I am on the home page
-    When I follow "Apply"
+    When I follow "Apps"
     And I follow "STUDENTS"
     Then I should be on the new user session page
 
@@ -24,7 +24,7 @@ Feature: feature apply
     When I fill in "Email" with "user1@berkeley.edu"
     And I fill in "Password" with "12345678"
     And I press "Log in"
-    And I follow "Apply"
+    And I follow "Apps"
     And I follow "STUDENTS"
     Then I should be on the application for studentapplications page
     
@@ -39,7 +39,7 @@ Feature: feature apply
     And I fill in "Major" with "EECS"
     And I fill in "Graduation" with "2016"
     And I fill in "Info" with "info"
-    And I fill in "Essay" with "essay"
+    # And I fill in "Essay" with "essay"
     And I press "Submit"
     Then I should see "Thank you for your message. We'll get back to you soon."
     

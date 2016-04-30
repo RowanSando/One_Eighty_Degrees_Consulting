@@ -59,7 +59,7 @@ Feature: check and edit application
     Then I should see "EECS"
     And I should see "2016"
     And I should see "info"
-    And I should see "essay"
+    # And I should see "essay"
     
     
   Scenario: pending application
