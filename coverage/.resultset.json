@@ -1858,8 +1858,145 @@
         null,
         null,
         null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/models/deadline.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/static_pages_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/application_helper.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/admin_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/applications_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/clients_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/main_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/sponsors_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/studentapplications_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/One_Eighty_Degrees_Consulting/app/controllers/admin_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        4,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
       ]
     },
-    "timestamp": 1461999026
+    "timestamp": 1461999272
   }
 }

@@ -13,5 +13,5 @@ Feature: reset password
   Scenario: successfully sending email
     Given I am on the home page
     When I follow "Login"
-    And I follow "Forget Password"
+    And I follow "Forgot Your Password?"
     Then I should see "We have sent applicant@berkeley.edu an email"

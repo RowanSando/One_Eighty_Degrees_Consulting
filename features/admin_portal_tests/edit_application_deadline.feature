@@ -8,7 +8,7 @@ Feature: edit deadline
     Given the following users exist:
     | email                       | password    | member_type |
     | admin@berkeley.edu          | password123 | admin       |
-    And the deadline is "2016-1-1-23-59"
+    And the deadline is "1/1/2016, 11:59 PM"
     
   Scenario: check deadline
     Given I am on the home page
@@ -18,7 +18,7 @@ Feature: edit deadline
     And I press "Log in"
     And I follow "Admin"
     And I follow "Set Application Deadline"
-    Then I should see "1/1/2016, 11:59 PM"
+    Then I should see "2016-01-01T23:59:00"
     
   Scenario: change deadline
     Given I am on the home page
